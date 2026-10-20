@@ -7,6 +7,8 @@ https://hanzdesigncollective.com ，由 GitHub Pages 发布。推送到 `main` �
 | `index.html` | 所有文字和页面结构（英文在 `lang-en`，中文在 `lang-zh`） |
 | `assets/css/style.css` | 样式、颜色、字体 |
 | `assets/js/site.js` | 中英文切换、深浅色切换 |
+| `assets/js/projects.js` | 项目地图上的项目列表（地址、类型、坐标） |
+| `assets/js/map.js` | 项目地图（MapLibre + OpenFreeMap 免费地图数据） |
 | `assets/images/` | 图片 |
 | `assets/fonts/` | 字体文件 |
 | `CNAME` | 域名设置，不要删除 |
