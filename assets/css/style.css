@@ -204,7 +204,8 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .pracn{font-size:13px;font-weight:500;letter-spacing:.1em;color:var(--grey);padding-top:12px}
 .pracname{color:var(--ink);font-weight:400;font-size:clamp(28px,3.1vw,40px);letter-spacing:-.02em;margin:0 0 14px}
 .pracdesc{font-size:15px;line-height:1.7;color:var(--soft);max-width:34em}
-.pracL{padding-right:clamp(20px,4vw,70px)}
+.pracL{padding-right:calc(clamp(50px,7vw,120px)/2)}
+.prac:not(.pracL){padding-left:calc(clamp(50px,7vw,120px)/2)}
 .foot{background:var(--panel);color:var(--panelink);padding-top:clamp(80px,10vw,140px);padding-bottom:44px}
 .footH{color:var(--panelink);font-weight:300;font-size:clamp(44px,7.5vw,116px);letter-spacing:-.03em;line-height:1.08;margin:0 0 clamp(48px,6vw,80px)}
 .footcontact{display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap;padding-bottom:clamp(56px,7vw,90px);border-bottom:1px solid var(--panelline)}
@@ -248,6 +249,7 @@ body[data-theme="dark"] .pmap .maplibregl-ctrl-icon,body[data-theme="dark"] .pma
 .studiogrid{grid-template-columns:1fr;gap:48px}
 .pracgrid{grid-template-columns:1fr}
 .pracL{padding-right:0}
+.prac:not(.pracL){padding-left:0}
 .navlinks{gap:22px}
 }
 @media (max-width:640px){
