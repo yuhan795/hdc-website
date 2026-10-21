@@ -215,6 +215,8 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .fitem a:hover{color:var(--grey)}
 .footbottom{display:flex;justify-content:space-between;align-items:center;margin-top:34px;flex-wrap:wrap;gap:16px}
 .footbottom .lbl{font-size:11px;color:var(--grey)}
+.footlegal{margin-top:28px;font-size:12px;line-height:1.7;color:var(--grey)}
+.footlegal p{margin:0}
 .footlogo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:normal;-webkit-text-stroke:.028em var(--panel);paint-order:stroke fill}
 ::selection{background:var(--ink);color:var(--bg)}
 .root{background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden}
