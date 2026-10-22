@@ -5,8 +5,8 @@
   var GLYPHS = 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf';
 
   var PALETTES = {
-    light: { land: '#F7F7F5', water: '#D3E2EC', park: '#DDE9D8', road: '#E4E4E1', major: '#D9D9D5', building: '#ECECE9', label: '#8C8C8A', halo: '#F7F7F5' },
-    dark:  { land: '#1D1D1B', water: '#11181D', park: '#1F2920', road: '#2B2B29', major: '#363633', building: '#2A2A28', label: '#77777A', halo: '#1D1D1B' }
+    light: { land: '#F7F7F7', water: '#DCDCDC', park: '#EDEDED', road: '#E6E6E6', major: '#D6D6D6', building: '#ECECEC', label: '#8C8C8C', halo: '#F7F7F7' },
+    dark:  { land: '#1D1D1D', water: '#121212', park: '#232323', road: '#2C2C2C', major: '#383838', building: '#2A2A2A', label: '#777777', halo: '#1D1D1D' }
   };
 
   function theme() { return document.body.dataset.theme === 'dark' ? 'dark' : 'light'; }
