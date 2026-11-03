@@ -49,12 +49,15 @@
     return { version: 8, glyphs: GLYPHS, sources: { omt: { type: 'vector', url: TILES } }, layers: layers };
   }
 
+  var canHover = window.matchMedia('(hover: hover)').matches;
+
   function addMarker(map, p) {
-    var el = document.createElement('button');
+    var el = document.createElement('a');
     el.className = 'pdot';
-    el.type = 'button';
+    el.href = 'project.html?p=' + p.slug;
+    el.dataset.slug = p.slug;
     el.setAttribute('aria-label', p.address + ', ' + p.type.en);
-    el.innerHTML = '<span class="ptip"><span class="ptip-a"></span><span class="ptip-t"><span lang-en=""></span><span lang-zh=""></span></span></span>';
+    el.innerHTML = '<span class="ptip"><span class="ptip-a"></span><span class="ptip-t"><span lang-en=""></span><span lang-zh=""></span></span><span class="ptip-go"><span lang-en="">View project</span><span lang-zh="">查看项目</span> →</span></span>';
     el.querySelector('.ptip-a').textContent = p.address;
     el.querySelector('[lang-en]').textContent = p.type.en;
     el.querySelector('[lang-zh]').textContent = p.type.zh;
@@ -68,11 +71,13 @@
     }
     el.addEventListener('mouseenter', place);
     el.addEventListener('focus', place);
-    // Touch screens have no hover: tap toggles the label
+    // Touch screens have no hover: the first tap shows the label, a second tap opens the project
     el.addEventListener('click', function (e) {
+      if (canHover || el.classList.contains('on')) return;
+      e.preventDefault();
       place();
       e.stopPropagation();
-      var on = !el.classList.contains('on');
+      var on = true;
       document.querySelectorAll('.pdot.on').forEach(function (d) { d.classList.remove('on'); });
       el.classList.toggle('on', on);
     });
@@ -80,7 +85,7 @@
   }
 
   function init() {
-    var projects = window.HDC_PROJECTS || [];
+    var projects = (window.HDC_PROJECTS || []).filter(function (p) { return p.lat != null; });
     var main = projects.filter(function (p) { return !p.inset; });
     var far = projects.filter(function (p) { return p.inset; });
 
@@ -140,6 +145,32 @@
 
   var section = document.getElementById('projects');
   if (!section) return;
+
+  // Project list under the map; hovering a row lights up its dot
+  var list = document.getElementById('plist');
+  (window.HDC_PROJECTS || []).forEach(function (p, i) {
+    var row = document.createElement('a');
+    row.className = 'prow';
+    row.href = 'project.html?p=' + p.slug;
+    row.innerHTML = '<span class="prow-n"></span><span class="prow-a"></span>' +
+      '<span class="prow-t"><span lang-en=""></span><span lang-zh=""></span></span>' +
+      '<span class="prow-l"><span lang-en=""></span><span lang-zh=""></span></span>' +
+      '<span class="prow-y"></span><span class="prow-go">→</span>';
+    row.querySelector('.prow-n').textContent = String(i + 1).padStart(2, '0');
+    row.querySelector('.prow-a').textContent = p.address;
+    row.querySelectorAll('.prow-t span')[0].textContent = p.type.en;
+    row.querySelectorAll('.prow-t span')[1].textContent = p.type.zh;
+    row.querySelectorAll('.prow-l span')[0].textContent = p.location.en;
+    row.querySelectorAll('.prow-l span')[1].textContent = p.location.zh;
+    row.querySelector('.prow-y').textContent = p.year || '';
+    function dot(on) {
+      var d = document.querySelector('.pdot[data-slug="' + p.slug + '"]');
+      if (d) d.classList.toggle('lit', on);
+    }
+    row.addEventListener('mouseenter', function () { dot(true); });
+    row.addEventListener('mouseleave', function () { dot(false); });
+    list.appendChild(row);
+  });
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       if (entries[0].isIntersecting) { io.disconnect(); load(); }

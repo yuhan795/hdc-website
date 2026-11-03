@@ -30,7 +30,9 @@ The owner writes in Chinese or English; reply in the language they used.
 | `index.html` | All copy and structure. Bilingual: English inside `lang-en` spans, Chinese inside `lang-zh` spans; CSS hides the inactive language via `body[data-lang]`. |
 | `assets/css/style.css` | All styles. Colours are CSS variables on `body` (`--bg`, `--ink`, `--grey`, `--line`, `--panel`…) with a `body[data-theme="dark"]` override. |
 | `assets/js/site.js` | Nav border on scroll, language and theme toggles (saved in `localStorage` as `hdc-lang` / `hdc-theme`). |
-| `assets/js/projects.js` | Project list for the map: address, type `{en, zh}`, lat/lng; `inset: true` puts a project on the Upstate NY mini map. |
+| `assets/js/projects.js` | All project content: slug, address, type/location/services/intro `{en, zh}`, year, lat/lng, image captions. `inset: true` → Upstate NY mini map; no lat/lng → listed but not on the map. |
+| `project.html` + `assets/js/project.js` | One project page for all projects: `project.html?p=<slug>` fills itself from `projects.js`. |
+| `assets/projects/<slug>/` | Project images `01.jpg`, `02.jpg`… in the order of that project's `images` list; `01` is the cover. Landscape images run full width, consecutive portraits pair up. |
 | `assets/js/map.js` | Projects map. |
 | `assets/fonts/` | Neue Montreal (body) and Space Grotesk (HDC. logo). |
 | `tools/serve.mjs` | Local preview server. |
@@ -47,7 +49,10 @@ Nav · Hero · marquee · Studio (`#studio`, dark panel, two columns) · Practic
 - Dots are HTML markers (`.pdot`): black (white in dark mode), turn red `#E2231A` on hover/tap, with a tooltip of address + type. Tooltips flip side near the map edges (`tip-l` / `tip-r` / `tip-b`).
 - Upstate NY inset (bottom-right) shows 6910 NY-28, East Meredith with an NYC reference marker.
 - Gotcha: MapLibre's CSS sets `.maplibregl-map{position:relative}`, so the map containers are sized with width/height 100%, not absolute positioning.
-- To add a project: geocode the address (OpenStreetMap Nominatim works), add a line to `projects.js`.
+- Dots are links to the project page; the tooltip has a red "View project →" line. On touch screens the first tap shows the tooltip, the second opens the page.
+- Under the map, `#plist` lists every project (built in `map.js`); hovering a row lights its dot red.
+- To add a project: geocode the address (OpenStreetMap Nominatim works), add a block to `projects.js`, put its images in `assets/projects/<slug>/` (JPEG, max 2000px, EXIF stripped).
+- Source material lives in `H:\My Drive\Projects` (one folder per job). Only publish the studio's own renderings, drawings and photos — not listing photos, reference images, or contracts/invoices/fees.
 
 Current projects: 175 W 95th St, 211 W 84th St, 555 W 59th St (condo renovation); 45 Great Jones St (retail); 11-12 Main Ave, Astoria and 21 Greenway, Roslyn (new development); 6910 NY-28, East Meredith (master planning).
 
