@@ -18,7 +18,6 @@
 
   document.title = p.address + ' — HANZ Design Collective';
   document.getElementById('ptitle').textContent = p.address;
-  document.getElementById('pintro').appendChild(both(p.intro));
 
   var meta = document.getElementById('pmeta');
   [[{ en: 'Location', zh: '地点' }, p.location],

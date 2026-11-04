@@ -30,7 +30,7 @@ The owner writes in Chinese or English; reply in the language they used.
 | `index.html` | All copy and structure. Bilingual: English inside `lang-en` spans, Chinese inside `lang-zh` spans; CSS hides the inactive language via `body[data-lang]`. |
 | `assets/css/style.css` | All styles. Colours are CSS variables on `body` (`--bg`, `--ink`, `--grey`, `--line`, `--panel`…) with a `body[data-theme="dark"]` override. |
 | `assets/js/site.js` | Nav border on scroll, language and theme toggles (saved in `localStorage` as `hdc-lang` / `hdc-theme`). |
-| `assets/js/projects.js` | All project content: slug, address, type/location/services/intro `{en, zh}`, year, lat/lng, image captions. `inset: true` → Upstate NY mini map; no lat/lng → listed but not on the map. |
+| `assets/js/projects.js` | All project content: slug, address, type/location/services `{en, zh}`, year, lat/lng, image captions. `inset: true` → Upstate NY mini map; no lat/lng → listed but not on the map. |
 | `project.html` + `assets/js/project.js` | One project page for all projects: `project.html?p=<slug>` fills itself from `projects.js`. |
 | `assets/projects/<slug>/` | Project images `01.jpg`, `02.jpg`… in the order of that project's `images` list; `01` is the cover. Landscape images run full width, consecutive portraits pair up. |
 | `assets/js/map.js` | Projects map. |
