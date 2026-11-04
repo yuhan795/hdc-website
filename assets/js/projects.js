@@ -68,10 +68,21 @@ window.HDC_PROJECTS = [
     images: [] },
 
   { slug: '6910-ny-28', address: '6910 NY-28, East Meredith', lat: 42.38404, lng: -75.00508, inset: true, year: 2025,
-    type: { en: 'Master Planning', zh: '总体规划' },
+    type: { en: 'Resort · Master Planning', zh: '度假村 · 总体规划' },
     location: { en: 'Upstate New York', zh: '纽约州北部' },
-    services: { en: 'Site analysis · Master planning', zh: '场地分析 · 总体规划' },
-    images: [{ kind: KIND.drawing, caption: { en: 'Parcel map', zh: '地块图' } }] },
+    services: { en: 'Master planning · Resort concept · Modular guest units', zh: '总体规划 · 度假村概念 · 模块化客房' },
+    images: [
+      { kind: KIND.render,  caption: { en: 'Guest tent at night', zh: '夜间帐篷客房' } },
+      { kind: KIND.render,  caption: { en: 'Guest units at sunset', zh: '日落下的客房' } },
+      { kind: KIND.render,  caption: { en: 'Aerial view', zh: '鸟瞰' } },
+      { kind: KIND.render,  caption: { en: 'Unit with private hot spring', zh: '带私汤的客房' } },
+      { kind: KIND.render,  caption: { en: 'Suite living room', zh: '套房起居室' } },
+      { kind: KIND.render,  caption: { en: 'Suite bedroom', zh: '套房卧室' } },
+      { kind: KIND.render,  caption: { en: 'Suite lounge', zh: '套房休息区' } },
+      { kind: KIND.drawing, caption: { en: '40 m² guest unit plan', zh: '40㎡客房平面图' } },
+      { kind: KIND.drawing, caption: { en: '51 m² suite plan', zh: '51㎡套房平面图' } },
+      { kind: KIND.drawing, caption: { en: 'Parcel map', zh: '地块图' } }
+    ] },
 
   { slug: 'le-bon-vivant', address: 'Le Bon Vivant', year: 2026,
     type: { en: 'Food & Beverage', zh: '餐饮' },
