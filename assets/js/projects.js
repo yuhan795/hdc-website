@@ -81,7 +81,7 @@ window.HDC_PROJECTS = [
       { kind: KIND.render,  caption: { en: 'Suite lounge', zh: '套房休息区' } },
       { kind: KIND.drawing, caption: { en: '40 m² guest unit plan', zh: '40㎡客房平面图' } },
       { kind: KIND.drawing, caption: { en: '51 m² suite plan', zh: '51㎡套房平面图' } },
-      { kind: KIND.drawing, caption: { en: 'Parcel map', zh: '地块图' } }
+      { kind: KIND.drawing, caption: { en: 'Site diagram', zh: '场地分析图' } }
     ] },
 
   { slug: 'le-bon-vivant', address: 'Le Bon Vivant', year: 2026,
