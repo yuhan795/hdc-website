@@ -5,6 +5,13 @@ const FILE = 'content/projects.json';
 const UPLOAD_DIR = 'assets/uploads';
 const MAX_SIDE = 2000;             // longest side of an uploaded image, like the site's own images
 const MAX_FILE_SIZE = 25 * 1024 * 1024;
+// Project status choices (STATUS field), English and Chinese.
+const STATUSES = [
+  { en: 'Built', zh: '已建成' },
+  { en: 'Under construction', zh: '施工中' },
+  { en: 'Ongoing', zh: '进行中' },
+  { en: 'In design', zh: '设计中' },
+];
 const KINDS = [
   ['render', 'Rendering · 效果图'], ['drawing', 'Drawing · 图纸'], ['board', 'Material selection · 材料选样'],
   ['site', 'Existing condition · 现场'], ['construction', 'Construction · 施工'], ['built', 'Completed · 完成实景'], ['photo', 'Photo · 照片'],
@@ -219,8 +226,21 @@ function renderPanel(p) {
       input(value.en, v => { value.en = v; set(); }, { placeholder: en }),
       input(value.zh, v => { value.zh = v; set(); }, { placeholder: zh }));
   };
+  // Status: a fixed list so English and Chinese always match. Empty = not shown.
+  function statusSelect() {
+    const choices = [['', '—'], ...STATUSES.map(s => [s.en, `${s.en} · ${s.zh}`])];
+    const select = el('select', {},
+      ...choices.map(([value, text]) => el('option', { value, textContent: text, selected: (p.status?.en ?? '') === value })));
+    select.addEventListener('change', () => {
+      const s = STATUSES.find(x => x.en === select.value);
+      if (s) p.status = { ...s }; else delete p.status;
+      changed();
+    });
+    return select;
+  }
   panel.append(
     el('div', { className: 'field' }, label('TEAM', 'Optional. For example a collaborator, or the firm the work was done at'), optional('credit', 'In collaboration with …', '与 … 合作')),
+    el('label', { className: 'field' }, label('STATUS', 'Shown on the project page'), statusSelect()),
     el('div', { className: 'field' }, label('AWARD', 'Optional'), optional('award', 'AIANYS 2023 Design Awards Winner', '2023 年 AIANYS 设计奖')),
     el('label', { className: 'field' }, label('PHOTOGRAPHY', 'Optional. Photographer name(s)'),
       input(p.photos ?? '', v => { if (v.trim()) p.photos = v; else delete p.photos; }, { maxLength: 80 })));

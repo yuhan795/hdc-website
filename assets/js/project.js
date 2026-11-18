@@ -44,10 +44,11 @@
     document.getElementById('ptitle').replaceChildren(both(nameOf(p)));
     var meta = document.getElementById('pmeta');
     meta.replaceChildren();
-    // The bar under the cards shows only these three; the title stays for screen readers.
+    // The bar under the cards shows only these four; the title stays for screen readers.
     [[{ en: 'Location', zh: '地点' }, p.location],
      [{ en: 'Services', zh: '服务' }, p.services],
-     [{ en: 'Team', zh: '团队' }, p.credit]
+     [{ en: 'Team', zh: '团队' }, p.credit],
+     [{ en: 'Status', zh: '状态' }, p.status]
     ].forEach(function (r) {
       if (!r[1] || !r[1].en) return;
       var dt = document.createElement('dt'), dd = document.createElement('dd');
