@@ -48,12 +48,13 @@ Nav · Hero · Studio (`#studio`, dark panel that unfolds from a card on scroll,
 
 - MapLibre GL `4.7.1` loaded from unpkg, vector tiles + fonts from OpenFreeMap (free, no API key). Loaded lazily when the section nears the viewport.
 - Custom greyscale style built in `makeStyle()`; `PALETTES.light` / `PALETTES.dark` follow the site theme. Map labels switch to `name:zh` in Chinese mode.
-- Main map fits all non-inset projects, then tilts to pitch 35. Scroll zoom needs Ctrl (cooperative gestures).
+- Layout: the map (`.pmap`, left) sits beside the project list (`#plist`, right) in `.pwrap`; stacked on phones. Flat plan only, north up, no tilt or rotation (3D versions were tried on 2026-11-18 and rejected). Scroll zoom needs Ctrl (cooperative gestures).
+- Opens on an overview fitted to every project with a "11 projects · New York region" count; resting the mouse ~0.25 s on a list row zooms (flyTo) to that project, leaving the list zooms back out. On touch, the first tap on a dot zooms in, a second opens the project, tapping elsewhere zooms out. Building footprints show from zoom 14.
 - Dots are HTML markers (`.pdot`): black (white in dark mode), turn red `#E2231A` on hover/tap, with a tooltip of address + type. Tooltips flip side near the map edges (`tip-l` / `tip-r` / `tip-b`).
-- Upstate NY inset (bottom-right) shows 6910 NY-28, East Meredith with an NYC reference marker.
+- The old "Beyond NYC" inset map was removed; `inset: true` in the content is now only used to pick a wider zoom for far projects.
 - Gotcha: MapLibre's CSS sets `.maplibregl-map{position:relative}`, so the map containers are sized with width/height 100%, not absolute positioning.
 - Dots are links to the project page; the tooltip has a red "View project →" line. On touch screens the first tap shows the tooltip, the second opens the page.
-- Under the map, `#plist` lists every project (built in `map.js`); hovering a row lights its dot red.
+- `#plist` (built in `map.js`) shows number, name, services and location; hovering a row lights its dot red.
 - To add a project: use the admin (NEW PROJECT; FIND FROM ADDRESS geocodes with OpenStreetMap Nominatim). By hand: add a block to `content/projects.json`.
 - Source material lives in `H:\My Drive\Projects` (one folder per job). Only publish the studio's own renderings, drawings and photos — not listing photos, reference images, or contracts/invoices/fees.
 

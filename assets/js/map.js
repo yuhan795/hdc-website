@@ -1,11 +1,13 @@
 // Projects map: MapLibre with OpenFreeMap vector tiles, loaded when the section scrolls near.
+// A flat plan of the New York region sits beside the project list, showing every project.
+// Resting the mouse on a project zooms the plan in to it; leaving the list zooms back out.
 (function () {
   var MAPLIBRE = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl';
   var TILES = 'https://tiles.openfreemap.org/planet';
   var GLYPHS = 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf';
 
   var PALETTES = {
-    light: { land: '#F7F7F7', water: '#DCDCDC', park: '#EDEDED', road: '#E6E6E6', major: '#D6D6D6', building: '#ECECEC', label: '#8C8C8C', halo: '#F7F7F7' },
+    light: { land: '#F7F7F7', water: '#DCDCDC', park: '#EDEDED', road: '#E6E6E6', major: '#D6D6D6', building: '#E9E9E8', label: '#8C8C8C', halo: '#F7F7F7' },
     dark:  { land: '#1D1D1D', water: '#121212', park: '#232323', road: '#2C2C2C', major: '#383838', building: '#2A2A2A', label: '#777777', halo: '#1D1D1D' }
   };
 
@@ -30,8 +32,9 @@
       { id: 'roads-major', type: 'line', source: 'omt', 'source-layer': 'transportation',
         filter: ['in', ['get', 'class'], ['literal', ['motorway', 'trunk', 'primary', 'secondary']]],
         paint: { 'line-color': p.major, 'line-width': ['interpolate', ['linear'], ['zoom'], 6, 0.4, 11, 1, 16, 6] } },
-      { id: 'buildings', type: 'fill-extrusion', source: 'omt', 'source-layer': 'building', minzoom: 13,
-        paint: { 'fill-extrusion-color': p.building, 'fill-extrusion-height': ['get', 'render_height'], 'fill-extrusion-base': ['get', 'render_min_height'], 'fill-extrusion-opacity': 0.9 } }
+      // Building footprints, flat (plan view)
+      { id: 'buildings', type: 'fill', source: 'omt', 'source-layer': 'building', minzoom: 14,
+        paint: { 'fill-color': p.building, 'fill-outline-color': p.major } }
     ];
     if (!inset) {
       var text = { 'text-field': nameField(), 'text-font': ['Noto Sans Regular'], 'text-size': 10, 'text-letter-spacing': 0.25, 'text-transform': 'uppercase' };
@@ -46,6 +49,7 @@
           layout: text, paint: label }
       );
     }
+    // One light from the upper left, so each face of a building reads as a separate plane.
     return { version: 8, glyphs: GLYPHS, sources: { omt: { type: 'vector', url: TILES } }, layers: layers };
   }
 
@@ -72,65 +76,69 @@
     }
     el.addEventListener('mouseenter', place);
     el.addEventListener('focus', place);
-    // Touch screens have no hover: the first tap shows the label, a second tap opens the project
+    // Touch screens have no hover: the first tap shows the label and zooms in there,
+    // a second tap opens the project
     el.addEventListener('click', function (e) {
       if (canHover || el.classList.contains('on')) return;
       e.preventDefault();
       place();
       e.stopPropagation();
-      var on = true;
       document.querySelectorAll('.pdot.on').forEach(function (d) { d.classList.remove('on'); });
-      el.classList.toggle('on', on);
+      el.classList.add('on');
+      flyTo(p);
     });
     new maplibregl.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map);
   }
 
+  var map = null, home = null, back = 0;
+
   function init() {
     var projects = (window.HDC_PROJECTS || []).filter(function (p) { return p.lat != null; });
-    var main = projects.filter(function (p) { return !p.inset; });
-    var far = projects.filter(function (p) { return p.inset; });
+    var box = document.getElementById('map').parentNode;
 
+    // Home view: a flat plan with every project on it.
     var bounds = new maplibregl.LngLatBounds();
-    main.forEach(function (p) { bounds.extend([p.lng, p.lat]); });
-
-    // Frame the projects flat, then tilt for a light 3D feel
-    var narrow = document.getElementById('map').clientWidth < 700;
-    var map = new maplibregl.Map({
-      container: 'map', style: makeStyle(false), bounds: bounds,
-      fitBoundsOptions: { padding: narrow ? { top: 60, bottom: 150, left: 30, right: 30 } : { top: 90, bottom: 90, left: 90, right: 90 } },
-      maxPitch: 60, cooperativeGestures: true, attributionControl: false
+    projects.forEach(function (p) { bounds.extend([p.lng, p.lat]); });
+    map = new maplibregl.Map({
+      container: 'map', style: makeStyle(false), bounds: bounds, fitBoundsOptions: { padding: 60 },
+      pitchWithRotate: false, dragRotate: false, cooperativeGestures: true, attributionControl: false
     });
-    map.setPitch(35);
-    map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'top-right');
+    map.touchZoomRotate.disableRotation();
+    home = { center: map.getCenter().toArray(), zoom: map.getZoom() };
+    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-left');
-    main.forEach(function (p) { addMarker(map, p); });
+    projects.forEach(function (p) { addMarker(map, p); });
 
-    var inset = null;
-    if (far.length) {
-      // Show the far projects together with NYC for scale
-      var ib = new maplibregl.LngLatBounds([-73.98, 40.75], [-73.98, 40.75]);
-      far.forEach(function (p) { ib.extend([p.lng, p.lat]); });
-      inset = new maplibregl.Map({
-        container: 'map-inset', style: makeStyle(true), bounds: ib,
-        fitBoundsOptions: { padding: { top: 34, bottom: 22, left: 26, right: 26 } },
-        interactive: false, attributionControl: false
-      });
-      var nyc = document.createElement('span');
-      nyc.className = 'pnyc';
-      nyc.textContent = 'NYC';
-      new maplibregl.Marker({ element: nyc, anchor: 'left', offset: [-4, 0] }).setLngLat([-73.98, 40.75]).addTo(inset);
-      far.forEach(function (p) { addMarker(inset, p); });
-    }
+    // A count in the corner of the overview.
+    var count = document.createElement('span');
+    count.className = 'pcount lbl';
+    count.innerHTML = '<span lang-en="">' + projects.length + ' projects · New York region</span><span lang-zh="">' + projects.length + ' 个项目 · 纽约地区</span>';
+    box.appendChild(count);
+    map.on('zoom', function () { box.classList.toggle('zoomed-in', map.getZoom() > home.zoom + 1); });
 
+    // Tapping anywhere else closes the label (and on touch screens, zooms back out).
     document.addEventListener('click', function () {
+      var open = document.querySelector('.pdot.on');
       document.querySelectorAll('.pdot.on').forEach(function (d) { d.classList.remove('on'); });
+      if (open && !canHover) flyHome();
     });
 
     // Follow the site's theme and language toggles
     new MutationObserver(function () {
       map.setStyle(makeStyle(false));
-      if (inset) inset.setStyle(makeStyle(true));
     }).observe(document.body, { attributes: true, attributeFilter: ['data-theme', 'data-lang'] });
+  }
+
+  // Resting on a project zooms the plan in to it from the wider view; leaving the list zooms out.
+  function flyTo(p) {
+    if (!map || p.lat == null) return;
+    clearTimeout(back);
+    map.flyTo({ center: [p.lng, p.lat], zoom: p.inset ? 14.5 : 16, speed: 0.8, curve: 1.5, essential: true });
+  }
+  function flyHome() {
+    if (!map || !home) return;
+    clearTimeout(back);
+    back = setTimeout(function () { map.flyTo(Object.assign({ speed: 0.9, curve: 1.5, essential: true }, home)); }, 350);
   }
 
   function load() {
@@ -178,10 +186,13 @@
         var d = document.querySelector('.pdot[data-slug="' + p.slug + '"]');
         if (d) d.classList.toggle('lit', on);
       }
-      row.addEventListener('mouseenter', function () { dot(true); });
-      row.addEventListener('mouseleave', function () { dot(false); });
+      // Dive once the mouse rests on a row for a moment (not while sweeping past rows).
+      var rest = 0;
+      row.addEventListener('mouseenter', function () { dot(true); if (canHover) { clearTimeout(rest); rest = setTimeout(function () { flyTo(p); }, 260); } });
+      row.addEventListener('mouseleave', function () { dot(false); clearTimeout(rest); });
       list.appendChild(row);
     });
+    if (canHover) list.addEventListener('mouseleave', flyHome);
   }
 
   function watch() {

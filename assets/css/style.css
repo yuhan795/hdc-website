@@ -349,3 +349,29 @@ body.project-page{height:100svh;overflow:hidden}
 .prow-l{display:none}
 .prow-go{grid-column:3;grid-row:1}
 }
+
+/* Projects: compact 3D map beside the list (assets/js/map.js). Hovering a project flies the map there. */
+.pwrap{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(28px,4vw,64px);align-items:stretch}
+.pwrap .pmap{height:auto;min-height:540px}
+.pwrap .plist{margin-top:0;align-self:start}
+.pwrap .prow{grid-template-columns:2.4em max-content 1fr 1.6em;gap:6px 18px;padding:16px 0}
+.pwrap .prow-n{grid-row:1/3;align-self:start;padding-top:.45em}
+.pwrap .prow-a{grid-column:2/4;grid-row:1}
+.pwrap .prow-t{grid-column:2;grid-row:2;font-size:11px}
+.pwrap .prow-l{grid-column:3;grid-row:2;font-size:11px;display:block}
+.pwrap .prow-go{grid-column:4;grid-row:1/3;align-self:center}
+.pwrap .prow.near .prow-go{color:#E2231A}
+@media (max-width:900px){
+.pwrap{grid-template-columns:1fr}
+.pwrap .pmap{min-height:0;height:62vh}
+}
+@media (max-width:640px){
+.pwrap .prow{grid-template-columns:2.2em 1fr 1.4em;gap:4px 10px}
+.pwrap .prow-a{grid-column:2}
+.pwrap .prow-t{grid-column:2;grid-row:2}
+.pwrap .prow-l{display:none}
+.pwrap .prow-go{grid-column:3}
+}
+.pcount{position:absolute;left:14px;top:14px;z-index:2;font-size:10.5px;color:var(--grey);pointer-events:none;transition:opacity .3s ease}
+/* Project count in the corner of the overview; hidden once zoomed in */
+.pmap.zoomed-in .pcount{opacity:0}
