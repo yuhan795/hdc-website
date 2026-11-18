@@ -56,17 +56,6 @@
       item.append(dt, dd);
       meta.appendChild(item);
     });
-    var nav = document.getElementById('pnext');
-    nav.replaceChildren();
-    var i = all.findIndex(function (q) { return q.slug === p.slug; });
-    if (i < 0 || all.length < 2) return;
-    [[all[(i - 1 + all.length) % all.length], '← ', ''], [all[(i + 1) % all.length], '', ' →']].forEach(function (r) {
-      var a = document.createElement('a');
-      a.href = 'project.html?p=' + r[0].slug;
-      var n = nameOf(r[0]);
-      a.appendChild(both({ en: r[1] + n.en + r[2], zh: r[1] + n.zh + r[2] }));
-      nav.appendChild(a);
-    });
   }
 
   // ---------- cards ----------
@@ -126,7 +115,7 @@
     board.style.height = boardHeight + 'px';
   }
   // Where the project text starts: cards are laid out above this line.
-  function infoTop() { return document.querySelector('.pback').getBoundingClientRect().top - 24; }
+  function infoTop() { return document.getElementById('pmeta').getBoundingClientRect().top - 24; }
   function fitCards() {
     fit = 1;
     notes.forEach(size);
