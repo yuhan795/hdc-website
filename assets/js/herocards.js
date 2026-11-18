@@ -13,12 +13,15 @@
     { x: 84, y: 16, w: 12, z: 0.05 }, { x: 94, y: 47, w: 7, z: 0.7 }, { x: 80, y: 57, w: 9.5, z: 0.35 },
     { x: 53, y: 70, w: 8, z: 0.6 },
   ];
+  // Phones and tablets: all seven cards, spread over the whole first screen. Cards that land
+  // behind the text stay there, blurred and faded, so the text remains readable.
   var NARROW = [
-    { x: 20, y: 4, w: 26, z: 0.45 }, { x: 52, y: 1, w: 30, z: 0.05 }, { x: 83, y: 7, w: 22, z: 0.7 },
-    { x: 66, y: 22, w: 17, z: 0.85 },
+    { x: 20, y: 3, w: 28, z: 0.4 }, { x: 62, y: 1, w: 32, z: 0.05 }, { x: 86, y: 15, w: 20, z: 0.7 },
+    { x: 30, y: 22, w: 22, z: 0.6 }, { x: 76, y: 40, w: 30, z: 0.3 }, { x: 22, y: 57, w: 26, z: 0.5 },
+    { x: 72, y: 73, w: 24, z: 0.75 },
   ];
 
-  // Which project goes in which slot (by slug, same order as the slots; phones use the first four).
+  // Which project goes in which slot (by slug, same order as the slots).
   // Each card shows the project's first image.
   var PICK = [
     '42-22-crescent-st',   // Dalongyi LIC
@@ -83,14 +86,18 @@
       var h = w / c.ratio + w * 0.16; // image plus frame and caption
       var l = W * s.x / 100 - w / 2, t = H * s.y / 100;
       l = Math.max(8, Math.min(W - w - 8, l));
-      var hit = t + h > H - 8 || avoid.some(function (r) { return l < r.r && l + w > r.l && t < r.b && t + h > r.t; });
-      c.el.style.display = hit ? 'none' : '';
+      var overText = avoid.some(function (r) { return l < r.r && l + w > r.l && t < r.b && t + h > r.t; });
+      // Wide screens keep cards clear of the text; narrow ones let them sit behind it, blurred.
+      var hide = t + h > H - 8 || (overText && !narrow);
+      var behind = overText && narrow;
+      c.el.style.display = hide ? 'none' : '';
+      c.el.classList.toggle('behind', behind);
       c.el.style.width = w + 'px';
       c.el.style.left = l + 'px';
       c.el.style.top = t + 'px';
       c.z = s.z;
       c.el.style.zIndex = String(10 - Math.round(s.z * 9));
-      c.el.style.setProperty('--blur', (s.z * 1.6).toFixed(2) + 'px');
+      c.el.style.setProperty('--blur', (behind ? Math.max(4, s.z * 6) : s.z * 1.6).toFixed(2) + 'px');
       c.el.style.setProperty('--grey', (s.z * 0.55).toFixed(2));
       c.el.style.setProperty('--delay', (c.i * 90) + 'ms');
     });

@@ -172,6 +172,7 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .hcards{position:absolute;inset:0;z-index:1;pointer-events:none}
 .hcard{position:absolute;display:block;pointer-events:auto;background:#fff;color:#141414;outline:1px solid #141414;outline-offset:-1px;padding:5px 5px 0;text-decoration:none;will-change:transform;filter:blur(var(--blur,0)) grayscale(var(--grey,0));opacity:0;transition:opacity .9s ease var(--delay,0ms),filter .4s ease,box-shadow .3s ease}
 .hcard.in{opacity:1}
+.hcard.in.behind{opacity:.55}
 .hcard img{display:block;width:100%;height:auto}
 .hcard-cap{display:block;padding:.55em 0 .6em;font-size:clamp(7.5px,.62vw,10px);font-weight:500;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hcard:hover{filter:none;z-index:15!important;box-shadow:0 18px 40px rgba(0,0,0,.18)}
@@ -276,7 +277,7 @@ body.project-page{height:100svh;overflow:hidden}
 .pcard{position:absolute;left:0;top:0;pointer-events:auto;margin:0;padding:0;border:0;background:#fff;color:#141414;outline:1px solid #141414;outline-offset:-1px;padding:var(--frame,10px) var(--frame,10px) 0;text-align:left;font-family:inherit;container-type:inline-size;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none;transform-origin:50% 50%;will-change:transform;box-shadow:0 1px 0 rgba(0,0,0,.04);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s ease,opacity .5s ease,box-shadow .3s ease}
 .pboard.setup .pcard{transition:none}
 .pcard img{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none}
-.pframe{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.35em .9em;padding:1.1em 0 1em;font-size:clamp(7.5px,3.5cqw,12px);font-weight:500;line-height:1.25;pointer-events:none}
+.pframe{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.35em .9em;padding:1.1em 0 1em;font-size:3.5cqw;font-weight:500;line-height:1.25;pointer-events:none}
 .pframe-row{display:contents}
 .pframe-k{color:#141414}
 .pframe-v{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -312,8 +313,8 @@ body.project-page{height:100svh;overflow:hidden}
 }
 @media (max-width:640px){
 .pinfo{max-width:100%}
-.pmeta{font-size:12px;gap:6px 18px}
-.pmeta div{max-width:46%}
+.pmeta{display:grid;grid-template-columns:1fr 1fr;font-size:12px;gap:10px 18px}
+.pmeta div{max-width:none;min-width:0}
 .pnext{padding-bottom:16px}
 .pinfo{padding-bottom:44px}
 
