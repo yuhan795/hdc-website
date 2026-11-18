@@ -59,7 +59,7 @@
       layer.appendChild(a);
       var card = { el: a, img: img, i: i, ratio: 4 / 3 };
       cards.push(card);
-      img.onload = function () { card.ratio = img.naturalWidth / img.naturalHeight; layout(); a.classList.add('in'); };
+      img.onload = function () { card.ratio = img.naturalWidth / img.naturalHeight; layout(); a.classList.add('in'); setTimeout(function () { a.classList.add('ready'); }, 1800); };
     });
   });
 
@@ -97,7 +97,19 @@
       c.el.style.top = t + 'px';
       c.z = s.z;
       c.el.style.zIndex = String(10 - Math.round(s.z * 9));
-      c.el.style.setProperty('--blur', (behind ? Math.max(4, s.z * 6) : s.z * 1.6).toFixed(2) + 'px');
+      // Phones: every card starts blurred and sharpens where the finger touches (see focus()).
+      c.narrow = narrow; c.behind = behind;
+      // How much of the card sits under text (0 to 1): more text on top, more blur.
+      var covered = 0;
+      avoid.forEach(function (r) {
+        // The text lines themselves, without the safety margin added above.
+        var ow = Math.min(l + w, r.r - 24) - Math.max(l, r.l + 24), oh = Math.min(t + h, r.b - 20) - Math.max(t, r.t + 20);
+        if (ow > 0 && oh > 0) covered += ow * oh;
+      });
+      covered = Math.min(1, covered / (w * h));
+      c.blur = narrow ? 1.5 + Math.min(1, covered * 1.4) * 7 : s.z * 1.6;
+      c.el.style.setProperty('--blur', c.blur.toFixed(2) + 'px');
+      c.el.style.setProperty('--o', narrow && behind ? '.55' : '1');
       c.el.style.setProperty('--grey', (s.z * 0.55).toFixed(2));
       c.el.style.setProperty('--delay', (c.i * 90) + 'ms');
     });
@@ -116,6 +128,38 @@
     });
   }
   function schedule() { if (!ticking) { ticking = true; requestAnimationFrame(move); } }
+
+  // Phones: a card comes into focus as the finger gets near it, and blurs again after the
+  // finger lifts.
+  var touch = null, release = 0;
+  function focus() {
+    cards.forEach(function (c) {
+      if (!c.narrow || c.el.style.display === 'none') return;
+      var f = 0;
+      if (touch) {
+        var r = c.el.getBoundingClientRect();
+        var d = Math.hypot(touch.x - (r.left + r.width / 2), touch.y - (r.top + r.height / 2));
+        var inner = Math.max(r.width, r.height) / 2, outer = inner + 110;
+        f = Math.max(0, Math.min(1, (outer - d) / (outer - inner)));
+      }
+      c.el.style.setProperty('--blur', (c.blur * (1 - f)).toFixed(2) + 'px');
+      c.el.style.setProperty('--o', (c.behind ? 0.55 + 0.45 * f : 1).toFixed(2));
+    });
+  }
+  function onTouch(e) {
+    var t = e.touches[0];
+    if (!t) return;
+    clearTimeout(release);
+    touch = { x: t.clientX, y: t.clientY };
+    focus();
+  }
+  window.addEventListener('touchstart', onTouch, { passive: true });
+  window.addEventListener('touchmove', onTouch, { passive: true });
+  window.addEventListener('touchend', function () {
+    clearTimeout(release);
+    release = setTimeout(function () { touch = null; focus(); }, 700);
+  }, { passive: true });
+  window.addEventListener('scroll', function () { if (touch) focus(); }, { passive: true });
 
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', layout);

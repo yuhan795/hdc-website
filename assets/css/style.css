@@ -171,8 +171,8 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .hero>div span{pointer-events:auto}
 .hcards{position:absolute;inset:0;z-index:1;pointer-events:none}
 .hcard{position:absolute;display:block;pointer-events:auto;background:#fff;color:#141414;outline:1px solid #141414;outline-offset:-1px;padding:5px 5px 0;text-decoration:none;will-change:transform;filter:blur(var(--blur,0)) grayscale(var(--grey,0));opacity:0;transition:opacity .9s ease var(--delay,0ms),filter .4s ease,box-shadow .3s ease}
-.hcard.in{opacity:1}
-.hcard.in.behind{opacity:.55}
+.hcard.in{opacity:var(--o,1)}
+.hcard.in.ready{transition:opacity .35s ease,filter .35s ease,box-shadow .3s ease}
 .hcard img{display:block;width:100%;height:auto}
 .hcard-cap{display:block;padding:.55em 0 .6em;font-size:clamp(7.5px,.62vw,10px);font-weight:500;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hcard:hover{filter:none;z-index:15!important;box-shadow:0 18px 40px rgba(0,0,0,.18)}
