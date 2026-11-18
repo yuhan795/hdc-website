@@ -99,15 +99,7 @@
       c.el.style.zIndex = String(10 - Math.round(s.z * 9));
       // Phones: every card starts blurred and sharpens where the finger touches (see focus()).
       c.narrow = narrow; c.behind = behind;
-      // How much of the card sits under text (0 to 1): more text on top, more blur.
-      var covered = 0;
-      avoid.forEach(function (r) {
-        // The text lines themselves, without the safety margin added above.
-        var ow = Math.min(l + w, r.r - 24) - Math.max(l, r.l + 24), oh = Math.min(t + h, r.b - 20) - Math.max(t, r.t + 20);
-        if (ow > 0 && oh > 0) covered += ow * oh;
-      });
-      covered = Math.min(1, covered / (w * h));
-      c.blur = narrow ? 1.5 + Math.min(1, covered * 1.4) * 7 : s.z * 1.6;
+      c.blur = narrow ? 4 : s.z * 1.6; // phones: the same blur for every card
       c.el.style.setProperty('--blur', c.blur.toFixed(2) + 'px');
       c.el.style.setProperty('--o', narrow && behind ? '.55' : '1');
       c.el.style.setProperty('--grey', (s.z * 0.55).toFixed(2));
