@@ -143,7 +143,7 @@
 *{box-sizing:border-box}
 body{margin:0;--bg:#EFEFEE;--ink:#141414;--soft:#4A4A48;--grey:#8C8C8A;--line:#DCDCDA;--panel:#141414;--panelink:#EFEFEE;--panelsoft:#B4B4B2;--panelline:#333330;--navbg:rgba(239,239,238,.86);background:var(--bg);color:var(--ink);font-family:'Neue Montreal','PingFang SC','Microsoft YaHei',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 body[data-theme="dark"]{--bg:#141414;--ink:#EFEFEE;--soft:#C6C6C4;--grey:#8C8C8A;--line:#333330;--panel:#1D1D1B;--panelink:#EFEFEE;--panelsoft:#B4B4B2;--panelline:#3A3A37;--navbg:rgba(20,20,20,.86)}
-.root,.nav,.studio,.foot,.marq{transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.root,.nav,.studio,.foot{transition:background-color .3s ease,color .3s ease,border-color .3s ease}
 body:not([data-lang="zh"]) [lang-zh]{display:none!important}
 body[data-lang="zh"] [lang-en]{display:none!important}
 a{color:var(--ink)}a:hover{color:var(--grey)}
@@ -182,10 +182,6 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .herobottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
 .herotag{font-size:clamp(26px,3.4vw,50px);font-weight:400;letter-spacing:-.015em;line-height:1.1;max-width:14em}
 .heroright{font-size:14px;line-height:1.7;color:var(--soft);max-width:320px;text-align:right}
-.marq{background:var(--panel);color:var(--panelink);overflow:hidden;border-top:1px solid var(--panel)}
-.marqtrack{display:flex;white-space:nowrap;will-change:transform;animation:scroll 26s linear infinite}
-.marqi{font-weight:300;font-size:28px;letter-spacing:.01em;padding:22px 0;display:flex;align-items:center}
-.marqdot{width:6px;height:6px;background:var(--panelink);border-radius:50%;margin:0 40px}
 @keyframes scroll{to{transform:translateX(-50%)}}
 .cyc{display:inline-block;height:1.3em;overflow:hidden;vertical-align:bottom}
 .cyctrack{display:block;animation:cyc 12s cubic-bezier(.77,0,.18,1) infinite}
@@ -204,6 +200,9 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .seclabel .no{font-weight:700;color:var(--ink)}
 .stmt{font-weight:300;font-size:clamp(32px,4.4vw,66px);letter-spacing:-.02em;line-height:1.3;max-width:20em}
 .studio{background:var(--panel);color:var(--panelink)}
+/* Dark sections arrive as a rounded card with light margins and unfold to full width as they
+   scroll in, then fold back into a card as they leave (assets/js/site.js sets the clip-path). */
+[data-unfold]{will-change:clip-path}
 .studiogrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,7vw,120px);align-items:start}
 .studioH{color:var(--panelink);font-weight:300;font-size:clamp(30px,3.8vw,54px);letter-spacing:-.02em;line-height:1.3;margin:14px 0 0}
 .studiobody p{font-size:clamp(15px,1.4vw,19px);line-height:1.7;color:var(--panelsoft);margin:0 0 22px}
@@ -329,8 +328,6 @@ body.project-page{height:100svh;overflow:hidden}
 .herobottom{flex-direction:column;align-items:flex-start;gap:22px}
 .heroright{font-size:14px;max-width:none!important}
 .herobottom .lbl{white-space:normal;font-size:10px!important;letter-spacing:.14em}
-.marqi{font-size:20px;padding:16px 0}
-.marqdot{margin:0 22px;width:5px;height:5px}
 .sec{padding-top:72px;padding-bottom:72px}
 .seclabel{margin-bottom:28px}
 .studioH{font-size:30px}

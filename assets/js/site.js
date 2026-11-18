@@ -51,6 +51,31 @@
     update();
   }
 
+  // Dark sections ([data-unfold]) arrive as a rounded card with light margins at the sides and
+  // unfold to full width while their top edge rises through the screen; as their bottom edge
+  // leaves at the top, they fold back into a card so the next light section shows around it.
+  var folds = Array.prototype.slice.call(document.querySelectorAll('[data-unfold]'));
+  if (folds.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var foldTicking = false;
+    var ease = function (t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
+    var fold = function () {
+      foldTicking = false;
+      var vh = window.innerHeight, vw = window.innerWidth;
+      var side = Math.min(vw * 0.06, 96), round = Math.min(vw * 0.04, 48);
+      folds.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.bottom < -vh || r.top > vh * 2) return;
+        var open = Math.min(ease((vh - r.top) / (vh * 0.85)), ease(r.bottom / (vh * 0.85)));
+        var x = ((1 - open) * side).toFixed(1), rad = ((1 - open) * round).toFixed(1);
+        el.style.clipPath = open >= 1 ? 'none' : 'inset(0 ' + x + 'px round ' + rad + 'px)';
+      });
+    };
+    var foldLater = function () { if (!foldTicking) { foldTicking = true; requestAnimationFrame(fold); } };
+    window.addEventListener('scroll', foldLater, { passive: true });
+    window.addEventListener('resize', foldLater);
+    fold();
+  }
+
   document.getElementById('toggle-lang').addEventListener('click', function () {
     var v = document.body.dataset.lang === 'zh' ? 'en' : 'zh';
     document.body.dataset.lang = v;
