@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Content — HDC.</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="logo" href="./" title="Projects">H<span class="lk1">D</span><span class="lk2">C</span><span class="lk3">.</span></a>
+    <span class="bar-tag">CONTENT · <a href="../index.html#projects" target="_blank" rel="noopener">VIEW SITE ↗</a></span>
+    <div class="bar-actions">
+      <span class="status" role="status" aria-live="polite"></span>
+      <button class="button button-quiet discard" type="button" hidden>DISCARD</button>
+      <button class="button publish" type="button" disabled>PUBLISH</button>
+      <button class="button button-quiet logout" type="button">LOG OUT</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <h1 class="headline">Projects <span class="headline-count"></span></h1>
+      <p class="hint">Click a project to edit its text and images. The order here is the order of the list on the website. Nothing goes live until you press PUBLISH.</p>
+    </section>
+    <div class="grid" aria-live="polite">
+      <button class="card card-add" type="button">
+        <span class="card-add-plus" aria-hidden="true">+</span>
+        <span class="card-add-label">NEW PROJECT</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- One project: its page on the left (a live preview of the draft), its settings on the right. -->
+  <section class="project-view" aria-label="Edit project" hidden>
+    <div class="project-preview">
+      <div class="preview-bar">
+        <button class="button button-small button-quiet project-back" type="button">← PROJECTS</button>
+        <span class="preview-title"></span>
+        <div class="preview-sizes" role="group" aria-label="Preview width">
+          <button class="button button-small button-quiet" type="button" data-width="" aria-pressed="true">DESKTOP</button>
+          <button class="button button-small button-quiet" type="button" data-width="390" aria-pressed="false">PHONE</button>
+        </div>
+      </div>
+      <div class="preview-frame"><iframe title="Project page preview"></iframe></div>
+    </div>
+    <div class="project-panel"><form class="panel" autocomplete="off"></form></div>
+  </section>
+
+  <div class="drop-overlay" aria-hidden="true"><span>Drop to add</span></div>
+  <input class="file-input" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden>
+  <script src="admin.js"></script>
+</body>
+</html>

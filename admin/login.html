@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Log in — HDC. Content</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="login-page">
+  <header class="bar">
+    <a class="logo" href="../index.html" title="Back to the website">H<span class="lk1">D</span><span class="lk2">C</span><span class="lk3">.</span></a>
+    <span class="bar-tag">CONTENT</span>
+  </header>
+  <main class="login">
+    <h1 class="headline">Log in</h1>
+    <form class="login-form" novalidate>
+      <label class="field">
+        <span class="label">USERNAME</span>
+        <input class="input" name="username" type="text" autocomplete="username" autocapitalize="off" spellcheck="false" required autofocus>
+      </label>
+      <label class="field">
+        <span class="label">PASSWORD</span>
+        <input class="input" name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <p class="login-error status is-error" role="alert"></p>
+      <button class="button login-submit" type="submit">LOG IN</button>
+    </form>
+  </main>
+  <script src="login.js"></script>
+</body>
+</html>

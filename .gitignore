@@ -1,0 +1,5 @@
+# Local secrets
+.dev.vars
+.wrangler/
+node_modules/
+Project Image/

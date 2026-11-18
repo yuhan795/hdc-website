@@ -11,13 +11,13 @@ Live site: https://hanzdesigncollective.com — a single static page, no build s
 
 ## Working folder
 
-The owner keeps this repo at `D:\My Drive\HDC WEBSITE` (Google Drive for desktop). If `D:` is missing, Google Drive isn't running — ask the owner to open it rather than working elsewhere. Only edit it from one machine at a time (Drive can conflict on `.git`).
+The owner keeps this repo at `D:\My Drive\Websites\HDC WEBSITE` (Google Drive for desktop; moved there from `D:\My Drive\HDC WEBSITE` in Nov 2026). It is its own repo, not part of the `manus-websites` monorepo in the same folder. If `D:` is missing, Google Drive isn't running — ask the owner to open it rather than working elsewhere. Only edit it from one machine at a time (Drive can conflict on `.git`).
 
 ## Workflow the owner expects
 
 1. `git pull` first.
 2. Make the change.
-3. Preview locally: `node tools/serve.mjs` → http://localhost:5190. Check light + dark mode, EN + 中文, desktop + phone width (~390px).
+3. Preview locally: `node tools/dev-server.mjs` → http://localhost:5190 (admin at `/admin/`, login from `.dev.vars`). Check light + dark mode, EN + 中文, desktop + phone width (~390px).
 4. Show the owner, and **only commit and push after they confirm**.
 5. After pushing, confirm the live site picked it up.
 
@@ -30,12 +30,14 @@ The owner writes in Chinese or English; reply in the language they used.
 | `index.html` | All copy and structure. Bilingual: English inside `lang-en` spans, Chinese inside `lang-zh` spans; CSS hides the inactive language via `body[data-lang]`. |
 | `assets/css/style.css` | All styles. Colours are CSS variables on `body` (`--bg`, `--ink`, `--grey`, `--line`, `--panel`…) with a `body[data-theme="dark"]` override. |
 | `assets/js/site.js` | Nav border on scroll, language and theme toggles (saved in `localStorage` as `hdc-lang` / `hdc-theme`). |
-| `assets/js/projects.js` | All project content: slug, address, type/location/services `{en, zh}`, year, lat/lng, image captions. `inset: true` → Upstate NY mini map; no lat/lng → listed but not on the map. |
-| `project.html` + `assets/js/project.js` | One project page for all projects: `project.html?p=<slug>` fills itself from `projects.js`. |
-| `assets/projects/<slug>/` | Project images `01.jpg`, `02.jpg`… in the order of that project's `images` list; `01` is the cover. Landscape images run full width, consecutive portraits pair up. |
+| `content/projects.json` | All project content, edited through the admin: `{ items: [{ slug, address, year, type/location/services {en, zh}, credit/award {en, zh} (optional), photos (photographer, optional), lat, lng, inset, images: [{ image, kind, caption {en, zh} }] }] }`. `kind` is render / drawing / board / site / built / photo. `inset: true` → the “Beyond NYC” mini map (CT, Long Island, PA, upstate); no lat/lng → listed but not on the map. Order = order of the list. |
+| `project.html` + `assets/js/project.js` | One project page for all projects: `project.html?p=<slug>`. Images float as draggable cards at random places (like BAD STUDIO's Works board); clicking one opens a large view with ←/→. The page is exactly one screen (no scrolling): project text at the bottom left, cards sized (`CARD_FILL`) and placed only in the space above it. Cards have depth (smaller/softer when far, mouse parallax); the one under the pointer floats to the front. Each card has a white BAD-style frame with Project / Image / Year. `?preview` shows a draft sent by the admin (postMessage, list order). |
+| `assets/projects/<slug>/` | Images added before the admin existed. New uploads from the admin go to `assets/uploads/` (WebP, max 2000 px). |
+| `admin/` | Content admin (adapted from BAD STUDIO's): project list, then per project a live preview on the left and fields on the right. PUBLISH saves `content/projects.json` + uploads. |
+| `lib/auth.mjs`, `lib/save-rules.mjs` | Login (signed `hdc_session` cookie) and what the admin may save. Copied from BAD STUDIO. |
+| `tools/dev-server.mjs` | Local server with the admin API; saves to disk. Credentials in `.dev.vars` (gitignored, never commit). |
 | `assets/js/map.js` | Projects map. |
 | `assets/fonts/` | Neue Montreal (body) and Space Grotesk (HDC. logo). |
-| `tools/serve.mjs` | Local preview server. |
 
 ## Page sections (top to bottom)
 
@@ -51,10 +53,16 @@ Nav · Hero · marquee · Studio (`#studio`, dark panel, two columns) · Practic
 - Gotcha: MapLibre's CSS sets `.maplibregl-map{position:relative}`, so the map containers are sized with width/height 100%, not absolute positioning.
 - Dots are links to the project page; the tooltip has a red "View project →" line. On touch screens the first tap shows the tooltip, the second opens the page.
 - Under the map, `#plist` lists every project (built in `map.js`); hovering a row lights its dot red.
-- To add a project: geocode the address (OpenStreetMap Nominatim works), add a block to `projects.js`, put its images in `assets/projects/<slug>/` (JPEG, max 2000px, EXIF stripped).
+- To add a project: use the admin (NEW PROJECT; FIND FROM ADDRESS geocodes with OpenStreetMap Nominatim). By hand: add a block to `content/projects.json`.
 - Source material lives in `H:\My Drive\Projects` (one folder per job). Only publish the studio's own renderings, drawings and photos — not listing photos, reference images, or contracts/invoices/fees.
 
-Current projects: 175 W 95th St, 211 W 84th St, 555 W 59th St (condo renovation); 45 Great Jones St (retail); 11-12 Main Ave, Astoria and 21 Greenway, Roslyn (new development); 6910 NY-28, East Meredith (master planning).
+Current projects (Nov 2026): HDC's own — 211 W 84th St, 555 W 59th St (condo renovation), 45 Great Jones St (retail), 6910 NY-28 (resort master plan), 42-22 Crescent St (restaurant, with Liyang Wang, 2022). Chen Gong's work at his previous firm, Ted Porter Architecture (credited on each page) — Gray House, Sharon House, Jerkinhead House, Art Storage Building, Fifth Avenue Apartment, CPW Apartment; images from `Project Image/Gong Chen.pdf`, no years given. Removed: 175 W 95th St, Le Bon Vivant, 11-12 Main Ave, 21 Greenway.
+
+## Admin
+
+- Locally: `node tools/dev-server.mjs`, open http://localhost:5190/admin/, log in with `.dev.vars`. PUBLISH writes the files on disk; then commit and push as usual.
+- Online: not set up yet (Nov 2026). GitHub Pages can't run the login/publish functions, so the admin needs a host that can (Vercel or Cloudflare Pages), committing to this repo through the GitHub API with a fine-grained token, like BAD STUDIO. Ask the owner which before setting it up.
+- Code changes never edit `content/projects.json` or `assets/uploads/` without saying so — those belong to the admin.
 
 ## Decisions already made
 

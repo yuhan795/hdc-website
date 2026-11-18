@@ -146,37 +146,49 @@
   var section = document.getElementById('projects');
   if (!section) return;
 
+  // Projects come from content/projects.json, which the admin edits.
+  fetch('content/projects.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (data) {
+    window.HDC_PROJECTS = data.items || [];
+    buildList();
+    watch();
+  }).catch(console.error);
+
   // Project list under the map; hovering a row lights up its dot
-  var list = document.getElementById('plist');
-  (window.HDC_PROJECTS || []).forEach(function (p, i) {
-    var row = document.createElement('a');
-    row.className = 'prow';
-    row.href = 'project.html?p=' + p.slug;
-    row.innerHTML = '<span class="prow-n"></span><span class="prow-a"></span>' +
-      '<span class="prow-t"><span lang-en=""></span><span lang-zh=""></span></span>' +
-      '<span class="prow-l"><span lang-en=""></span><span lang-zh=""></span></span>' +
-      '<span class="prow-y"></span><span class="prow-go">→</span>';
-    row.querySelector('.prow-n').textContent = String(i + 1).padStart(2, '0');
-    row.querySelector('.prow-a').textContent = p.address;
-    row.querySelectorAll('.prow-t span')[0].textContent = p.type.en;
-    row.querySelectorAll('.prow-t span')[1].textContent = p.type.zh;
-    row.querySelectorAll('.prow-l span')[0].textContent = p.location.en;
-    row.querySelectorAll('.prow-l span')[1].textContent = p.location.zh;
-    row.querySelector('.prow-y').textContent = p.year || '';
-    function dot(on) {
-      var d = document.querySelector('.pdot[data-slug="' + p.slug + '"]');
-      if (d) d.classList.toggle('lit', on);
+  function buildList() {
+    var list = document.getElementById('plist');
+    window.HDC_PROJECTS.forEach(function (p, i) {
+      var row = document.createElement('a');
+      row.className = 'prow';
+      row.href = 'project.html?p=' + p.slug;
+      row.innerHTML = '<span class="prow-n"></span><span class="prow-a"></span>' +
+        '<span class="prow-t"><span lang-en=""></span><span lang-zh=""></span></span>' +
+        '<span class="prow-l"><span lang-en=""></span><span lang-zh=""></span></span>' +
+        '<span class="prow-y"></span><span class="prow-go">→</span>';
+      row.querySelector('.prow-n').textContent = String(i + 1).padStart(2, '0');
+      row.querySelector('.prow-a').textContent = p.address;
+      row.querySelectorAll('.prow-t span')[0].textContent = p.type.en;
+      row.querySelectorAll('.prow-t span')[1].textContent = p.type.zh;
+      row.querySelectorAll('.prow-l span')[0].textContent = p.location.en;
+      row.querySelectorAll('.prow-l span')[1].textContent = p.location.zh;
+      row.querySelector('.prow-y').textContent = p.year || '';
+      function dot(on) {
+        var d = document.querySelector('.pdot[data-slug="' + p.slug + '"]');
+        if (d) d.classList.toggle('lit', on);
+      }
+      row.addEventListener('mouseenter', function () { dot(true); });
+      row.addEventListener('mouseleave', function () { dot(false); });
+      list.appendChild(row);
+    });
+  }
+
+  function watch() {
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { io.disconnect(); load(); }
+      }, { rootMargin: '600px' });
+      io.observe(section);
+    } else {
+      load();
     }
-    row.addEventListener('mouseenter', function () { dot(true); });
-    row.addEventListener('mouseleave', function () { dot(false); });
-    list.appendChild(row);
-  });
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) { io.disconnect(); load(); }
-    }, { rootMargin: '600px' });
-    io.observe(section);
-  } else {
-    load();
   }
 })();
