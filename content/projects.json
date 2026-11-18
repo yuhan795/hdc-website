@@ -233,6 +233,115 @@
       ]
     },
     {
+      "slug": "45-great-jones-st",
+      "address": "Oncept Soho Store",
+      "year": 2026,
+      "type": {
+        "en": "Retail",
+        "zh": "零售"
+      },
+      "location": {
+        "en": "NoHo, Manhattan",
+        "zh": "曼哈顿诺霍区"
+      },
+      "services": {
+        "en": "Custom fixtures · Fabrication",
+        "zh": "定制展示道具 · 制作安装"
+      },
+      "credit": {
+        "en": "Yuhan Zhang",
+        "zh": "Yuhan Zhang"
+      },
+      "status": {
+        "en": "Built",
+        "zh": "已建成"
+      },
+      "lat": 40.72656,
+      "lng": -73.9927,
+      "images": [
+        {
+          "image": "assets/projects/45-great-jones-st/01.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Storefront",
+            "zh": "店面"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/12.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Shop interior",
+            "zh": "店内"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/02.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Pedestals",
+            "zh": "展台"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/03.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Pedestal run",
+            "zh": "展台组合"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/04.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Display table",
+            "zh": "展示桌"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/06.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Pegboard shoe display, axonometric",
+            "zh": "洞洞板鞋履展示，轴测图"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/07.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Shelf and dowel detail",
+            "zh": "搁板与木销节点"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/08.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Pegboard wall, elevation",
+            "zh": "洞洞板墙立面"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/09.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Shelves, dowels and pedestals, plan",
+            "zh": "搁板、木销与展台平面"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/10.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Pegboard wall display",
+            "zh": "洞洞板墙展示"
+          }
+        }
+      ]
+    },
+    {
       "slug": "6910-ny-28",
       "address": "Not-A-Cabin",
       "year": 2025,
@@ -431,107 +540,6 @@
           "caption": {
             "en": "Wall tile in progress",
             "zh": "墙砖铺贴中"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "45-great-jones-st",
-      "address": "Oncept Soho Store",
-      "year": 2026,
-      "type": {
-        "en": "Retail",
-        "zh": "零售"
-      },
-      "location": {
-        "en": "NoHo, Manhattan",
-        "zh": "曼哈顿诺霍区"
-      },
-      "services": {
-        "en": "Custom fixtures · Fabrication",
-        "zh": "定制展示道具 · 制作安装"
-      },
-      "credit": {
-        "en": "Yuhan Zhang",
-        "zh": "Yuhan Zhang"
-      },
-      "status": {
-        "en": "Built",
-        "zh": "已建成"
-      },
-      "lat": 40.72656,
-      "lng": -73.9927,
-      "images": [
-        {
-          "image": "assets/projects/45-great-jones-st/01.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Storefront",
-            "zh": "店面"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/02.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Pedestals",
-            "zh": "展台"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/03.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Pedestal run",
-            "zh": "展台组合"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/04.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Display table",
-            "zh": "展示桌"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/06.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Pegboard shoe display, axonometric",
-            "zh": "洞洞板鞋履展示，轴测图"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/07.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Shelf and dowel detail",
-            "zh": "搁板与木销节点"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/08.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Pegboard wall, elevation",
-            "zh": "洞洞板墙立面"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/09.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Shelves, dowels and pedestals, plan",
-            "zh": "搁板、木销与展台平面"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/10.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Pegboard wall display",
-            "zh": "洞洞板墙展示"
           }
         }
       ]
