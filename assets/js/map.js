@@ -57,10 +57,11 @@
     el.href = 'project.html?p=' + p.slug;
     el.dataset.slug = p.slug;
     el.setAttribute('aria-label', p.address + ', ' + p.type.en);
-    el.innerHTML = '<span class="ptip"><span class="ptip-a"></span><span class="ptip-t"><span lang-en=""></span><span lang-zh=""></span></span><span class="ptip-go"><span lang-en="">View project</span><span lang-zh="">查看项目</span> →</span></span>';
-    el.querySelector('.ptip-a').textContent = p.address;
-    el.querySelector('[lang-en]').textContent = p.type.en;
-    el.querySelector('[lang-zh]').textContent = p.type.zh;
+    el.innerHTML = '<span class="ptip"><span class="ptip-a"><span lang-en=""></span><span lang-zh=""></span></span><span class="ptip-t"><span lang-en=""></span><span lang-zh=""></span></span><span class="ptip-go"><span lang-en="">View project</span><span lang-zh="">查看项目</span> →</span></span>';
+    el.querySelectorAll('.ptip-a span')[0].textContent = p.address;
+    el.querySelectorAll('.ptip-a span')[1].textContent = p.address_zh || p.address;
+    el.querySelector('.ptip-t [lang-en]').textContent = p.type.en;
+    el.querySelector('.ptip-t [lang-zh]').textContent = p.type.zh;
     // Keep the label inside the map when the dot is near an edge
     function place() {
       var box = el.closest('.pmap').getBoundingClientRect(), r = el.getBoundingClientRect();
@@ -160,12 +161,13 @@
       var row = document.createElement('a');
       row.className = 'prow';
       row.href = 'project.html?p=' + p.slug;
-      row.innerHTML = '<span class="prow-n"></span><span class="prow-a"></span>' +
+      row.innerHTML = '<span class="prow-n"></span><span class="prow-a"><span lang-en=""></span><span lang-zh=""></span></span>' +
         '<span class="prow-t"><span lang-en=""></span><span lang-zh=""></span></span>' +
         '<span class="prow-l"><span lang-en=""></span><span lang-zh=""></span></span>' +
         '<span class="prow-go">→</span>';
       row.querySelector('.prow-n').textContent = String(i + 1).padStart(2, '0');
-      row.querySelector('.prow-a').textContent = p.address;
+      row.querySelectorAll('.prow-a span')[0].textContent = p.address;
+      row.querySelectorAll('.prow-a span')[1].textContent = p.address_zh || p.address;
       row.querySelectorAll('.prow-t span')[0].textContent = p.type.en;
       row.querySelectorAll('.prow-t span')[1].textContent = p.type.zh;
       row.querySelectorAll('.prow-l span')[0].textContent = p.location.en;

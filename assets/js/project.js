@@ -32,13 +32,15 @@
     s.append(en, zh);
     return s;
   }
+  // A project's name in both languages; the Chinese one is optional.
+  function nameOf(p) { return { en: p.address || '', zh: p.address_zh || p.address || '' }; }
   function clamp(v, min, max) { return Math.max(min, Math.min(Math.max(min, max), v)); }
   function topInset() { return innerWidth < 640 ? 76 : 96; }
 
   // ---------- project text ----------
   function renderInfo(p, all) {
     document.title = (p.address || 'Project') + ' — HANZ Design Collective';
-    document.getElementById('ptitle').textContent = p.address || '';
+    document.getElementById('ptitle').replaceChildren(both(nameOf(p)));
     var meta = document.getElementById('pmeta');
     meta.replaceChildren();
     [[{ en: 'Location', zh: '地点' }, p.location],
@@ -52,7 +54,9 @@
       if (!r[1] || !r[1].en) return;
       var dt = document.createElement('dt'), dd = document.createElement('dd');
       dt.appendChild(both(r[0])); dd.appendChild(both(r[1]));
-      meta.append(dt, dd);
+      var item = document.createElement('div');
+      item.append(dt, dd);
+      meta.appendChild(item);
     });
     var nav = document.getElementById('pnext');
     nav.replaceChildren();
@@ -61,7 +65,8 @@
     [[all[(i - 1 + all.length) % all.length], '← ', ''], [all[(i + 1) % all.length], '', ' →']].forEach(function (r) {
       var a = document.createElement('a');
       a.href = 'project.html?p=' + r[0].slug;
-      a.textContent = r[1] + r[0].address + r[2];
+      var n = nameOf(r[0]);
+      a.appendChild(both({ en: r[1] + n.en + r[2], zh: r[1] + n.zh + r[2] }));
       nav.appendChild(a);
     });
   }
@@ -189,7 +194,7 @@
     }
     var year = p.year ? String(p.year) : '';
     note.el.querySelector('.pframe').replaceChildren(
-      row({ en: 'Project:', zh: '项目：' }, join({ en: p.address, zh: p.address }, p.type)),
+      row({ en: 'Project:', zh: '项目：' }, join(nameOf(p), p.type)),
       row({ en: 'Image:', zh: '图片：' }, join(KIND[entry.kind], entry.caption)),
       year ? row({ en: 'Year:', zh: '年份：' }, both({ en: year, zh: year })) : '');
   }

@@ -189,18 +189,21 @@ function renderPanel(p) {
     unpublished.has(p) ? '' : el('a', { href: `../project.html?p=${p.slug}`, target: '_blank', rel: 'noopener', textContent: 'OPEN ↗', title: 'Shows the published version' })));
   panel.lastChild.firstChild.append(pageLink);
 
-  panel.append(el('label', { className: 'field' }, label('ADDRESS / TITLE', 'The big title on the page, in the list and on the map'),
-    input(p.address, v => {
-      p.address = v;
-      if (unpublished.has(p)) {
-        const taken = new Set(items().filter(q => q !== p).map(q => q.slug));
-        let s = slug(v), n = 2;
-        while (taken.has(s)) s = `${slug(v)}-${n++}`;
-        p.slug = s;
-        pageLink.textContent = `hanzdesigncollective.com/project.html?p=${p.slug}`;
-        showHash(p);
-      }
-    }, { maxLength: 80 })));
+  // The Chinese name is optional; without it the English name shows in 中文 mode too.
+  panel.append(el('div', { className: 'field' }, label('NAME', 'English · 中文. The big title on the page, in the list and on the map'),
+    el('div', { className: 'pair' },
+      input(p.address, v => {
+        p.address = v;
+        if (unpublished.has(p)) {
+          const taken = new Set(items().filter(q => q !== p).map(q => q.slug));
+          let s = slug(v), n = 2;
+          while (taken.has(s)) s = `${slug(v)}-${n++}`;
+          p.slug = s;
+          pageLink.textContent = `hanzdesigncollective.com/project.html?p=${p.slug}`;
+          showHash(p);
+        }
+      }, { maxLength: 80, placeholder: 'Project name' }),
+      input(p.address_zh ?? '', v => { if (v.trim()) p.address_zh = v; else delete p.address_zh; }, { maxLength: 40, placeholder: '项目名称' }))));
   panel.append(
     el('div', { className: 'field' }, label('TYPE', 'English · 中文'), pair(p, 'type', 'Condo Renovation', '公寓翻新')),
     el('div', { className: 'field' }, label('LOCATION'), pair(p, 'location', 'Upper West Side, Manhattan', '曼哈顿上西区')),
@@ -228,7 +231,7 @@ function renderPanel(p) {
   function setCoord(key, v) { const n = parseFloat(v); if (Number.isFinite(n)) p[key] = n; else delete p[key]; }
   const find = el('button', { type: 'button', className: 'button button-small button-quiet', textContent: 'FIND FROM ADDRESS' });
   find.addEventListener('click', async () => {
-    if (!p.address.trim()) return setStatus('Type the address first', true);
+    if (!p.address.trim()) return setStatus('Type the name first', true);
     setStatus('Looking up the address…');
     try {
       const q = /,/.test(p.address) ? p.address : `${p.address}, New York`;
@@ -243,7 +246,7 @@ function renderPanel(p) {
   });
   const inset = el('input', { type: 'checkbox', checked: !!p.inset });
   inset.addEventListener('change', () => { if (inset.checked) p.inset = true; else delete p.inset; changed(); });
-  panel.append(el('div', { className: 'field' }, label('MAP', 'Leave both empty to keep the project off the map (it still shows in the list)'),
+  panel.append(el('div', { className: 'field' }, label('MAP', 'Leave both empty to keep the project off the map (it still shows in the list). FIND FROM ADDRESS searches the English name, so it only works when the name is a street address'),
     el('div', { className: 'pair' }, lat, lng),
     el('div', { className: 'row' }, find, el('label', { className: 'check' }, inset, 'Show on the “Beyond NYC” mini map'))));
 
@@ -345,7 +348,7 @@ async function post(url, body, failure) {
 
 async function publish() {
   const missing = items().find(p => !p.address.trim());
-  if (missing) return setStatus('Every project needs an address before publishing', true);
+  if (missing) return setStatus('Every project needs a name before publishing', true);
   const referenced = new Set(items().flatMap(p => p.images.map(entry => entry.image)));
   // base: the content as loaded, so the server can refuse to overwrite newer changes.
   const files = [{ path: FILE, encoding: 'utf8', content: `${JSON.stringify(state.content, null, 2)}\n`, base: state.saved }];

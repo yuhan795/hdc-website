@@ -1,574 +1,9 @@
 {
   "items": [
     {
-      "slug": "211-w-84th-st",
-      "address": "211 W 84th St",
-      "year": 2026,
-      "type": {
-        "en": "Renovation & Addition",
-        "zh": "改造与加建"
-      },
-      "location": {
-        "en": "Upper West Side, Manhattan",
-        "zh": "曼哈顿上西区"
-      },
-      "services": {
-        "en": "Interior alteration · Condo board approval",
-        "zh": "室内改造 · 公寓管委会报批"
-      },
-      "lat": 40.78694,
-      "lng": -73.97676,
-      "images": [
-        {
-          "image": "assets/projects/211-w-84th-st/01.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Living and dining room",
-            "zh": "客厅与餐厅"
-          }
-        },
-        {
-          "image": "assets/projects/211-w-84th-st/02.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Kitchen",
-            "zh": "厨房"
-          }
-        },
-        {
-          "image": "assets/projects/211-w-84th-st/03.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Primary bathroom",
-            "zh": "主卫"
-          }
-        },
-        {
-          "image": "assets/projects/211-w-84th-st/04.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Powder room",
-            "zh": "客卫"
-          }
-        },
-        {
-          "image": "assets/projects/211-w-84th-st/05.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Floor plan",
-            "zh": "平面图"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "555-w-59th-st",
-      "address": "555 W 59th St",
-      "year": 2026,
-      "type": {
-        "en": "Renovation & Addition",
-        "zh": "改造与加建"
-      },
-      "location": {
-        "en": "Lincoln Square, Manhattan",
-        "zh": "曼哈顿林肯广场"
-      },
-      "services": {
-        "en": "Interior design advisory · Contractor coordination",
-        "zh": "室内设计顾问 · 施工协调"
-      },
-      "lat": 40.77164,
-      "lng": -73.98936,
-      "images": [
-        {
-          "image": "assets/projects/555-w-59th-st/01.jpg",
-          "kind": "board",
-          "caption": {
-            "en": "Wall tile — Vortex Prime",
-            "zh": "墙砖 — Vortex Prime"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/02.jpg",
-          "kind": "board",
-          "caption": {
-            "en": "Shower floor — Matera Stone mosaic",
-            "zh": "淋浴地面 — Matera 石材马赛克"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/03.jpg",
-          "kind": "board",
-          "caption": {
-            "en": "Vanity — walnut, quartz top",
-            "zh": "浴室柜 — 胡桃木，石英台面"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/04.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Floor plan",
-            "zh": "平面图"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/05.jpg",
-          "kind": "site",
-          "caption": {
-            "en": "Bathroom before renovation",
-            "zh": "翻新前的浴室"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "45-great-jones-st",
-      "address": "45 Great Jones St",
-      "year": 2026,
-      "type": {
-        "en": "Retail",
-        "zh": "零售"
-      },
-      "location": {
-        "en": "NoHo, Manhattan",
-        "zh": "曼哈顿诺霍区"
-      },
-      "services": {
-        "en": "Custom fixtures · Fabrication",
-        "zh": "定制展示道具 · 制作安装"
-      },
-      "lat": 40.72656,
-      "lng": -73.9927,
-      "images": [
-        {
-          "image": "assets/projects/45-great-jones-st/01.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Storefront",
-            "zh": "店面"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/02.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Pedestals",
-            "zh": "展台"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/03.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Pedestal run",
-            "zh": "展台组合"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/04.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Display table",
-            "zh": "展示桌"
-          }
-        },
-        {
-          "image": "assets/projects/45-great-jones-st/05.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Shop interior",
-            "zh": "店内"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "6910-ny-28",
-      "address": "6910 NY-28, East Meredith",
-      "year": 2025,
-      "type": {
-        "en": "Resort · Master Planning",
-        "zh": "度假村 · 总体规划"
-      },
-      "location": {
-        "en": "Upstate New York",
-        "zh": "纽约州北部"
-      },
-      "services": {
-        "en": "Master planning · Resort concept · Modular guest units",
-        "zh": "总体规划 · 度假村概念 · 模块化客房"
-      },
-      "lat": 42.38404,
-      "lng": -75.00508,
-      "inset": true,
-      "images": [
-        {
-          "image": "assets/projects/6910-ny-28/01.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Guest tent at night",
-            "zh": "夜间帐篷客房"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/02.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Guest units at golden hour",
-            "zh": "黄昏中的客房"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/03.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Woodland guest unit",
-            "zh": "林间客房"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/04.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Master plan",
-            "zh": "总体规划"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/05.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Site analysis",
-            "zh": "场地分析"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/06.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "40 m² guest unit plan",
-            "zh": "40㎡客房平面图"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/07.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "51 m² suite plan, option A",
-            "zh": "51㎡套房平面图（方案 A）"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/08.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "51 m² suite plan, option B",
-            "zh": "51㎡套房平面图（方案 B）"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/09.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "80 m² suite plan",
-            "zh": "80㎡套房平面图"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "42-22-crescent-st",
-      "address": "42-22 Crescent St",
-      "year": 2022,
-      "type": {
-        "en": "Restaurant",
-        "zh": "餐厅"
-      },
-      "location": {
-        "en": "Long Island City, Queens",
-        "zh": "皇后区长岛市"
-      },
-      "services": {
-        "en": "Restaurant design",
-        "zh": "餐厅设计"
-      },
-      "credit": {
-        "en": "In collaboration with Liyang Wang",
-        "zh": "与 Liyang Wang 合作"
-      },
-      "lat": 40.75017,
-      "lng": -73.94135,
-      "images": [
-        {
-          "image": "assets/projects/42-22-crescent-st/01.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Dining room",
-            "zh": "用餐区"
-          }
-        },
-        {
-          "image": "assets/projects/42-22-crescent-st/02.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Bar",
-            "zh": "吧台"
-          }
-        },
-        {
-          "image": "assets/projects/42-22-crescent-st/03.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Bar and shelving",
-            "zh": "吧台与酒架"
-          }
-        },
-        {
-          "image": "assets/projects/42-22-crescent-st/04.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Dining room",
-            "zh": "用餐区"
-          }
-        },
-        {
-          "image": "assets/projects/42-22-crescent-st/05.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Counter",
-            "zh": "柜台"
-          }
-        },
-        {
-          "image": "assets/projects/42-22-crescent-st/06.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Outdoor dining",
-            "zh": "户外用餐区"
-          }
-        },
-        {
-          "image": "assets/projects/42-22-crescent-st/07.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Outdoor dining",
-            "zh": "户外用餐区"
-          }
-        },
-        {
-          "image": "assets/projects/42-22-crescent-st/08.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Outdoor dining plan and elevation",
-            "zh": "户外用餐区平立面"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "gray-house",
-      "address": "Gray House",
-      "type": {
-        "en": "New Build",
-        "zh": "新建住宅"
-      },
-      "location": {
-        "en": "Litchfield County, Connecticut",
-        "zh": "康涅狄格州利奇菲尔德县"
-      },
-      "services": {
-        "en": "Architecture",
-        "zh": "建筑设计"
-      },
-      "credit": {
-        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
-        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
-      },
-      "photos": "ImagenSubliminal",
-      "award": {
-        "en": "AIANYS 2023 Design Awards Winner",
-        "zh": "2023 年 AIANYS 设计奖"
-      },
-      "lat": 41.7471,
-      "lng": -73.1887,
-      "inset": true,
-      "images": [
-        {
-          "image": "assets/projects/gray-house/01.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "South façade and courtyard",
-            "zh": "南立面与庭院"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/02.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "South façade",
-            "zh": "南立面"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/03.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "North façade and entrance",
-            "zh": "北立面与入口"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/04.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Living room",
-            "zh": "客厅"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/05.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Living room and fireplace",
-            "zh": "客厅与壁炉"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/06.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Living room window",
-            "zh": "客厅窗"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/07.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Courtyard",
-            "zh": "庭院"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/08.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Façade detail",
-            "zh": "立面细部"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/09.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Entry foyer",
-            "zh": "门厅"
-          }
-        },
-        {
-          "image": "assets/projects/gray-house/10.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Ground and second floor plans",
-            "zh": "一层与二层平面图"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "sharon-house",
-      "address": "Sharon House",
-      "type": {
-        "en": "Renovation & Addition",
-        "zh": "改造与加建"
-      },
-      "location": {
-        "en": "Sharon, Connecticut",
-        "zh": "康涅狄格州沙伦"
-      },
-      "services": {
-        "en": "Architecture",
-        "zh": "建筑设计"
-      },
-      "credit": {
-        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
-        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
-      },
-      "photos": "Jeffrey Gray Brandsted",
-      "lat": 41.879,
-      "lng": -73.4768,
-      "inset": true,
-      "images": [
-        {
-          "image": "assets/projects/sharon-house/01.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "North façade and entrance",
-            "zh": "北立面与入口"
-          }
-        },
-        {
-          "image": "assets/projects/sharon-house/02.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "South façade",
-            "zh": "南立面"
-          }
-        },
-        {
-          "image": "assets/projects/sharon-house/03.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Living room",
-            "zh": "客厅"
-          }
-        },
-        {
-          "image": "assets/projects/sharon-house/04.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Entrance",
-            "zh": "入口"
-          }
-        },
-        {
-          "image": "assets/projects/sharon-house/05.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "House in the landscape",
-            "zh": "景观中的住宅"
-          }
-        },
-        {
-          "image": "assets/projects/sharon-house/06.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Glass connector",
-            "zh": "玻璃连廊"
-          }
-        },
-        {
-          "image": "assets/projects/sharon-house/07.jpg",
-          "kind": "built",
-          "caption": {
-            "en": "Main bedroom",
-            "zh": "主卧"
-          }
-        },
-        {
-          "image": "assets/projects/sharon-house/08.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Ground and second floor plans",
-            "zh": "一层与二层平面图"
-          }
-        }
-      ]
-    },
-    {
       "slug": "jerkinhead-house",
       "address": "Jerkinhead House",
+      "address_zh": "折檐屋",
       "type": {
         "en": "Renovation & Addition",
         "zh": "改造与加建"
@@ -681,8 +116,396 @@
       ]
     },
     {
+      "slug": "gray-house",
+      "address": "Gray House",
+      "address_zh": "灰屋",
+      "type": {
+        "en": "New Build",
+        "zh": "新建住宅"
+      },
+      "location": {
+        "en": "Litchfield County, Connecticut",
+        "zh": "康涅狄格州利奇菲尔德县"
+      },
+      "services": {
+        "en": "Architecture",
+        "zh": "建筑设计"
+      },
+      "credit": {
+        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
+        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
+      },
+      "photos": "ImagenSubliminal",
+      "award": {
+        "en": "AIANYS 2023 Design Awards Winner",
+        "zh": "2023 年 AIANYS 设计奖"
+      },
+      "lat": 41.7471,
+      "lng": -73.1887,
+      "inset": true,
+      "images": [
+        {
+          "image": "assets/projects/gray-house/01.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "South façade and courtyard",
+            "zh": "南立面与庭院"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/02.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "South façade",
+            "zh": "南立面"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/03.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "North façade and entrance",
+            "zh": "北立面与入口"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/04.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Living room",
+            "zh": "客厅"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/05.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Living room and fireplace",
+            "zh": "客厅与壁炉"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/06.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Living room window",
+            "zh": "客厅窗"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/07.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Courtyard",
+            "zh": "庭院"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/08.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Façade detail",
+            "zh": "立面细部"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/09.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Entry foyer",
+            "zh": "门厅"
+          }
+        },
+        {
+          "image": "assets/projects/gray-house/10.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Ground and second floor plans",
+            "zh": "一层与二层平面图"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "6910-ny-28",
+      "address": "Not-A-Cabin",
+      "address_zh": "非木屋",
+      "year": 2025,
+      "type": {
+        "en": "Resort · Master Planning",
+        "zh": "度假村 · 总体规划"
+      },
+      "location": {
+        "en": "Upstate New York",
+        "zh": "纽约州北部"
+      },
+      "services": {
+        "en": "Master planning · Resort concept · Modular guest units",
+        "zh": "总体规划 · 度假村概念 · 模块化客房"
+      },
+      "lat": 42.38404,
+      "lng": -75.00508,
+      "inset": true,
+      "images": [
+        {
+          "image": "assets/projects/6910-ny-28/01.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Guest tent at night",
+            "zh": "夜间帐篷客房"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/02.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Guest units at golden hour",
+            "zh": "黄昏中的客房"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/03.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Woodland guest unit",
+            "zh": "林间客房"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/04.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Master plan",
+            "zh": "总体规划"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/05.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Site analysis",
+            "zh": "场地分析"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/06.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "40 m² guest unit plan",
+            "zh": "40㎡客房平面图"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/07.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "51 m² suite plan, option A",
+            "zh": "51㎡套房平面图（方案 A）"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/08.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "51 m² suite plan, option B",
+            "zh": "51㎡套房平面图（方案 B）"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/09.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "80 m² suite plan",
+            "zh": "80㎡套房平面图"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "42-22-crescent-st",
+      "address": "LIC Restaurant",
+      "address_zh": "长岛市餐厅",
+      "year": 2022,
+      "type": {
+        "en": "Restaurant",
+        "zh": "餐厅"
+      },
+      "location": {
+        "en": "Long Island City, Queens",
+        "zh": "皇后区长岛市"
+      },
+      "services": {
+        "en": "Restaurant design",
+        "zh": "餐厅设计"
+      },
+      "credit": {
+        "en": "In collaboration with Liyang Wang",
+        "zh": "与 Liyang Wang 合作"
+      },
+      "lat": 40.75017,
+      "lng": -73.94135,
+      "images": [
+        {
+          "image": "assets/projects/42-22-crescent-st/01.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Dining room",
+            "zh": "用餐区"
+          }
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/02.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Bar",
+            "zh": "吧台"
+          }
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/03.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Bar and shelving",
+            "zh": "吧台与酒架"
+          }
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/04.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Dining room",
+            "zh": "用餐区"
+          }
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/05.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Counter",
+            "zh": "柜台"
+          }
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/06.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Outdoor dining",
+            "zh": "户外用餐区"
+          }
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/07.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Outdoor dining",
+            "zh": "户外用餐区"
+          }
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/08.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Outdoor dining plan and elevation",
+            "zh": "户外用餐区平立面"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "sharon-house",
+      "address": "Sharon House",
+      "address_zh": "沙伦住宅",
+      "type": {
+        "en": "Renovation & Addition",
+        "zh": "改造与加建"
+      },
+      "location": {
+        "en": "Sharon, Connecticut",
+        "zh": "康涅狄格州沙伦"
+      },
+      "services": {
+        "en": "Architecture",
+        "zh": "建筑设计"
+      },
+      "credit": {
+        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
+        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
+      },
+      "photos": "Jeffrey Gray Brandsted",
+      "lat": 41.879,
+      "lng": -73.4768,
+      "inset": true,
+      "images": [
+        {
+          "image": "assets/projects/sharon-house/01.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "North façade and entrance",
+            "zh": "北立面与入口"
+          }
+        },
+        {
+          "image": "assets/projects/sharon-house/02.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "South façade",
+            "zh": "南立面"
+          }
+        },
+        {
+          "image": "assets/projects/sharon-house/03.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Living room",
+            "zh": "客厅"
+          }
+        },
+        {
+          "image": "assets/projects/sharon-house/04.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Entrance",
+            "zh": "入口"
+          }
+        },
+        {
+          "image": "assets/projects/sharon-house/05.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "House in the landscape",
+            "zh": "景观中的住宅"
+          }
+        },
+        {
+          "image": "assets/projects/sharon-house/06.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Glass connector",
+            "zh": "玻璃连廊"
+          }
+        },
+        {
+          "image": "assets/projects/sharon-house/07.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Main bedroom",
+            "zh": "主卧"
+          }
+        },
+        {
+          "image": "assets/projects/sharon-house/08.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Ground and second floor plans",
+            "zh": "一层与二层平面图"
+          }
+        }
+      ]
+    },
+    {
       "slug": "art-storage-building",
       "address": "Art Storage Building",
+      "address_zh": "艺术品仓储建筑",
       "type": {
         "en": "Land Development & New Build",
         "zh": "场地开发与新建"
@@ -757,6 +580,7 @@
     {
       "slug": "fifth-avenue-apartment",
       "address": "Fifth Avenue Apartment",
+      "address_zh": "第五大道公寓",
       "type": {
         "en": "Gut Renovation",
         "zh": "公寓整体翻新"
@@ -830,6 +654,7 @@
     {
       "slug": "cpw-apartment",
       "address": "CPW Apartment",
+      "address_zh": "中央公园西公寓",
       "type": {
         "en": "Gut Renovation",
         "zh": "公寓整体翻新"
@@ -896,6 +721,192 @@
           "caption": {
             "en": "Existing and proposed floor plans",
             "zh": "现状与改造平面图"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "211-w-84th-st",
+      "address": "The Henry Residence",
+      "address_zh": "亨利公寓",
+      "year": 2026,
+      "type": {
+        "en": "Renovation & Addition",
+        "zh": "改造与加建"
+      },
+      "location": {
+        "en": "Upper West Side, Manhattan",
+        "zh": "曼哈顿上西区"
+      },
+      "services": {
+        "en": "Interior alteration · Condo board approval",
+        "zh": "室内改造 · 公寓管委会报批"
+      },
+      "lat": 40.78694,
+      "lng": -73.97676,
+      "images": [
+        {
+          "image": "assets/projects/211-w-84th-st/01.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Living and dining room",
+            "zh": "客厅与餐厅"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/02.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Kitchen",
+            "zh": "厨房"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/03.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Primary bathroom",
+            "zh": "主卫"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/04.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Powder room",
+            "zh": "客卫"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/05.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Floor plan",
+            "zh": "平面图"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "555-w-59th-st",
+      "address": "The Elements Residence",
+      "address_zh": "元素公寓",
+      "year": 2026,
+      "type": {
+        "en": "Renovation & Addition",
+        "zh": "改造与加建"
+      },
+      "location": {
+        "en": "Lincoln Square, Manhattan",
+        "zh": "曼哈顿林肯广场"
+      },
+      "services": {
+        "en": "Interior design advisory · Contractor coordination",
+        "zh": "室内设计顾问 · 施工协调"
+      },
+      "lat": 40.77164,
+      "lng": -73.98936,
+      "images": [
+        {
+          "image": "assets/projects/555-w-59th-st/01.jpg",
+          "kind": "board",
+          "caption": {
+            "en": "Wall tile — Vortex Prime",
+            "zh": "墙砖 — Vortex Prime"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/02.jpg",
+          "kind": "board",
+          "caption": {
+            "en": "Shower floor — Matera Stone mosaic",
+            "zh": "淋浴地面 — Matera 石材马赛克"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/03.jpg",
+          "kind": "board",
+          "caption": {
+            "en": "Vanity — walnut, quartz top",
+            "zh": "浴室柜 — 胡桃木，石英台面"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/04.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Floor plan",
+            "zh": "平面图"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/05.jpg",
+          "kind": "site",
+          "caption": {
+            "en": "Bathroom before renovation",
+            "zh": "翻新前的浴室"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "45-great-jones-st",
+      "address": "Oncept Soho Store",
+      "address_zh": "Oncept 苏荷店",
+      "year": 2026,
+      "type": {
+        "en": "Retail",
+        "zh": "零售"
+      },
+      "location": {
+        "en": "NoHo, Manhattan",
+        "zh": "曼哈顿诺霍区"
+      },
+      "services": {
+        "en": "Custom fixtures · Fabrication",
+        "zh": "定制展示道具 · 制作安装"
+      },
+      "lat": 40.72656,
+      "lng": -73.9927,
+      "images": [
+        {
+          "image": "assets/projects/45-great-jones-st/01.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Storefront",
+            "zh": "店面"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/02.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Pedestals",
+            "zh": "展台"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/03.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Pedestal run",
+            "zh": "展台组合"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/04.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Display table",
+            "zh": "展示桌"
+          }
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/05.jpg",
+          "kind": "built",
+          "caption": {
+            "en": "Shop interior",
+            "zh": "店内"
           }
         }
       ]
