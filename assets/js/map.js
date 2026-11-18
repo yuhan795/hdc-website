@@ -163,14 +163,13 @@
       row.innerHTML = '<span class="prow-n"></span><span class="prow-a"></span>' +
         '<span class="prow-t"><span lang-en=""></span><span lang-zh=""></span></span>' +
         '<span class="prow-l"><span lang-en=""></span><span lang-zh=""></span></span>' +
-        '<span class="prow-y"></span><span class="prow-go">→</span>';
+        '<span class="prow-go">→</span>';
       row.querySelector('.prow-n').textContent = String(i + 1).padStart(2, '0');
       row.querySelector('.prow-a').textContent = p.address;
       row.querySelectorAll('.prow-t span')[0].textContent = p.type.en;
       row.querySelectorAll('.prow-t span')[1].textContent = p.type.zh;
       row.querySelectorAll('.prow-l span')[0].textContent = p.location.en;
       row.querySelectorAll('.prow-l span')[1].textContent = p.location.zh;
-      row.querySelector('.prow-y').textContent = p.year || '';
       function dot(on) {
         var d = document.querySelector('.pdot[data-slug="' + p.slug + '"]');
         if (d) d.classList.toggle('lit', on);

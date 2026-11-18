@@ -196,9 +196,6 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .studioH{color:var(--panelink);font-weight:300;font-size:clamp(30px,3.8vw,54px);letter-spacing:-.02em;line-height:1.3;margin:14px 0 0}
 .studiobody p{font-size:clamp(15px,1.4vw,19px);line-height:1.7;color:var(--panelsoft);margin:0 0 22px}
 .studiobody p:last-child{margin-bottom:0}
-.stats{display:flex;gap:64px;margin-top:52px;flex-wrap:wrap}
-.stat .n{color:var(--panelink);font-weight:300;font-size:40px;letter-spacing:-.02em}
-.stat .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-top:6px}
 .pracgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
 .prac{border-top:1px solid var(--line);padding:40px 0}
 .pracn{font-size:13px;font-weight:500;letter-spacing:.1em;color:var(--grey);padding-top:12px}
@@ -253,8 +250,8 @@ body[data-theme="dark"] .pmap .maplibregl-ctrl-icon,body[data-theme="dark"] .pma
 body[data-theme="dark"] .ptip-go{border-top-color:rgba(0,0,0,.14)}
 /* Project list under the map */
 .plist{margin-top:clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
-.prow{display:grid;grid-template-columns:3em 1.4fr 1fr 1.2fr 4em 2em;align-items:baseline;gap:16px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none}
-.prow-n,.prow-y{font-size:12px;letter-spacing:.1em;color:var(--grey)}
+.prow{display:grid;grid-template-columns:3em 1.4fr 1fr 1.2fr 2em;align-items:baseline;gap:16px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none}
+.prow-n{font-size:12px;letter-spacing:.1em;color:var(--grey)}
 .prow-a{font-size:clamp(18px,1.7vw,24px);letter-spacing:-.01em;transition:transform .25s ease}
 .prow-t,.prow-l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
 .prow-go{justify-self:end;font-size:18px;color:var(--grey);transition:transform .25s ease,color .2s ease}
@@ -321,8 +318,6 @@ body.project-page{height:100svh;overflow:hidden}
 .seclabel{margin-bottom:28px}
 .studioH{font-size:30px}
 .studiobody p{font-size:15px}
-.stats{gap:36px;margin-top:36px}
-.stat .n{font-size:32px}
 .prac{padding:30px 0}
 .pracn{padding-top:8px}
 .pracname{font-size:26px}
@@ -336,6 +331,6 @@ body.project-page{height:100svh;overflow:hidden}
 .footbottom{flex-direction:column;align-items:flex-start}
 .prow{grid-template-columns:2.4em 1fr 1.5em;gap:4px 10px;padding:16px 0}
 .prow-t{grid-column:2;grid-row:2;font-size:10.5px}
-.prow-l,.prow-y{display:none}
+.prow-l{display:none}
 .prow-go{grid-column:3;grid-row:1}
 }
