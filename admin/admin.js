@@ -31,6 +31,11 @@ function el(tag, props = {}, ...children) {
 }
 
 async function load() {
+  // Online, the admin page itself is public: without a valid login it goes to the login page.
+  if ((await fetch('/api/me', { cache: 'no-store' })).status === 401) {
+    location.replace('login.html');
+    return new Promise(() => {});
+  }
   const response = await fetch(`../${FILE}`, { cache: 'no-store' });
   if (!response.ok) throw new Error(`Could not load ${FILE}`);
   state.content = await response.json();
@@ -354,6 +359,8 @@ async function publish() {
       if (!upload.sha) {
         setStatus(`Uploading ${index + 1} of ${pending.length}…`);
         const body = `{"encoding":"base64","content":"${await toBase64(upload.blob)}"}`;
+        // The online server accepts at most 4.5 MB per request.
+        if (body.length > 4.3 * 1024 * 1024) throw new Error(`${path.split('/').pop()} is too large to upload. Use a smaller image`);
         upload.sha = (await post(`/api/upload?path=${encodeURIComponent(path)}`, body, 'Upload failed')).sha;
       }
       files.unshift({ path, sha: upload.sha });
