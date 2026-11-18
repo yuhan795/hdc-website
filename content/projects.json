@@ -444,107 +444,6 @@
       ]
     },
     {
-      "slug": "555-w-59th-st",
-      "address": "The Elements Residence",
-      "year": 2026,
-      "type": {
-        "en": "Renovation & Addition",
-        "zh": "改造与加建"
-      },
-      "location": {
-        "en": "Lincoln Square, Manhattan",
-        "zh": "曼哈顿林肯广场"
-      },
-      "services": {
-        "en": "Interior",
-        "zh": "室内设计"
-      },
-      "credit": {
-        "en": "Yuhan Zhang, Gong Chen",
-        "zh": "Yuhan Zhang, Gong Chen"
-      },
-      "status": {
-        "en": "Under construction",
-        "zh": "施工中"
-      },
-      "lat": 40.77164,
-      "lng": -73.98936,
-      "images": [
-        {
-          "image": "assets/projects/555-w-59th-st/01.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Primary bathroom shower",
-            "zh": "主卫淋浴间"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/02.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Bathroom with glass shower",
-            "zh": "玻璃淋浴浴室"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/03.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Floor plan",
-            "zh": "平面图"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/04.jpg",
-          "kind": "construction",
-          "caption": {
-            "en": "New wall framing",
-            "zh": "新墙体龙骨"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/05.jpg",
-          "kind": "construction",
-          "caption": {
-            "en": "Plumbing rough-in",
-            "zh": "给排水预埋"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/06.jpg",
-          "kind": "construction",
-          "caption": {
-            "en": "Shower framing",
-            "zh": "淋浴间龙骨"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/07.jpg",
-          "kind": "construction",
-          "caption": {
-            "en": "Wall tile in progress",
-            "zh": "墙砖铺贴中"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/08.jpg",
-          "kind": "construction",
-          "caption": {
-            "en": "Wall tile in progress",
-            "zh": "墙砖铺贴中"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/09.jpg",
-          "kind": "construction",
-          "caption": {
-            "en": "Wall tile in progress",
-            "zh": "墙砖铺贴中"
-          }
-        }
-      ]
-    },
-    {
       "slug": "42-22-crescent-st",
       "address": "Dalongyi LIC",
       "year": 2022,
@@ -1044,6 +943,83 @@
           "caption": {
             "en": "Existing and proposed floor plans",
             "zh": "现状与改造平面图"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "555-w-59th-st",
+      "address": "The Elements Residence",
+      "year": 2026,
+      "type": {
+        "en": "Renovation & Addition",
+        "zh": "改造与加建"
+      },
+      "location": {
+        "en": "Lincoln Square, Manhattan",
+        "zh": "曼哈顿林肯广场"
+      },
+      "services": {
+        "en": "Interior",
+        "zh": "室内设计"
+      },
+      "credit": {
+        "en": "Yuhan Zhang, Gong Chen",
+        "zh": "Yuhan Zhang, Gong Chen"
+      },
+      "status": {
+        "en": "Under construction",
+        "zh": "施工中"
+      },
+      "lat": 40.77164,
+      "lng": -73.98936,
+      "images": [
+        {
+          "image": "assets/projects/555-w-59th-st/01.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Primary bathroom shower",
+            "zh": "主卫淋浴间"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/02.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Bathroom with glass shower",
+            "zh": "玻璃淋浴浴室"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/03.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Floor plan",
+            "zh": "平面图"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/04.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "New wall framing",
+            "zh": "新墙体龙骨"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/05.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "Plumbing rough-in",
+            "zh": "给排水预埋"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/07.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "Wall tile in progress",
+            "zh": "墙砖铺贴中"
           }
         }
       ]
