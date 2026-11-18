@@ -42,7 +42,7 @@ The owner writes in Chinese or English; reply in the language they used.
 
 ## Page sections (top to bottom)
 
-Nav · Hero · marquee · Studio (`#studio`, dark panel, two columns) · Practice (`#practice`, Space / Identity / Visual / Interface) · Projects (`#projects`, map) · Footer (`#contact`).
+Nav · Hero · Studio (`#studio`, dark panel that unfolds from a card on scroll, two columns) · Practice (`#practice`, Space / Identity / Video / Interface) · Projects (`#projects`, map) · Footer (`#contact`).
 
 ## Projects map
 
