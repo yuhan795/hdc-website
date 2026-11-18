@@ -12,6 +12,13 @@ const STATUSES = [
   { en: 'Ongoing', zh: '进行中' },
   { en: 'In design', zh: '设计中' },
 ];
+// Services choices (SERVICES field), English and Chinese.
+const SERVICES = [
+  { en: 'Interior', zh: '室内设计' },
+  { en: 'Architecture', zh: '建筑设计' },
+  { en: 'Interior & Architecture', zh: '建筑与室内设计' },
+  { en: 'Master planning', zh: '总体规划' },
+];
 const KINDS = [
   ['render', 'Rendering · 效果图'], ['drawing', 'Drawing · 图纸'], ['board', 'Material selection · 材料选样'],
   ['site', 'Existing condition · 现场'], ['construction', 'Construction · 施工'], ['built', 'Completed · 完成实景'], ['photo', 'Photo · 照片'],
@@ -211,10 +218,26 @@ function renderPanel(p) {
         }
       }, { maxLength: 80, placeholder: 'Project name' }),
       input(p.address_zh ?? '', v => { if (v.trim()) p.address_zh = v; else delete p.address_zh; }, { maxLength: 40, placeholder: '项目名称' }))));
+  // Services and status come from fixed lists, so English and Chinese always match.
+  // Empty = not shown on the page.
+  function choiceSelect(key, list) {
+    const current = p[key]?.en ?? '';
+    const choices = [['', '—'], ...list.map(s => [s.en, `${s.en} · ${s.zh}`])];
+    // Keep an older free-text value visible until it is changed.
+    if (current && !list.some(s => s.en === current)) choices.push([current, `${current} (old)`]);
+    const select = el('select', {},
+      ...choices.map(([value, text]) => el('option', { value, textContent: text, selected: current === value })));
+    select.addEventListener('change', () => {
+      const s = list.find(x => x.en === select.value);
+      if (s) p[key] = { ...s }; else if (!select.value) delete p[key];
+      changed();
+    });
+    return select;
+  }
   panel.append(
     el('div', { className: 'field' }, label('TYPE', 'English · 中文'), pair(p, 'type', 'Condo Renovation', '公寓翻新')),
     el('div', { className: 'field' }, label('LOCATION'), pair(p, 'location', 'Upper West Side, Manhattan', '曼哈顿上西区')),
-    el('div', { className: 'field' }, label('SERVICES'), pair(p, 'services', 'Interior design', '室内设计')),
+    el('label', { className: 'field' }, label('SERVICES'), choiceSelect('services', SERVICES)),
     el('label', { className: 'field' }, label('YEAR', 'Leave empty to hide'),
       input(p.year ?? '', v => { if (/^\d{4}$/.test(v.trim())) p.year = Number(v); else delete p.year; }, { inputMode: 'numeric', maxLength: 4, placeholder: '2026' })));
 
@@ -226,21 +249,9 @@ function renderPanel(p) {
       input(value.en, v => { value.en = v; set(); }, { placeholder: en }),
       input(value.zh, v => { value.zh = v; set(); }, { placeholder: zh }));
   };
-  // Status: a fixed list so English and Chinese always match. Empty = not shown.
-  function statusSelect() {
-    const choices = [['', '—'], ...STATUSES.map(s => [s.en, `${s.en} · ${s.zh}`])];
-    const select = el('select', {},
-      ...choices.map(([value, text]) => el('option', { value, textContent: text, selected: (p.status?.en ?? '') === value })));
-    select.addEventListener('change', () => {
-      const s = STATUSES.find(x => x.en === select.value);
-      if (s) p.status = { ...s }; else delete p.status;
-      changed();
-    });
-    return select;
-  }
   panel.append(
     el('div', { className: 'field' }, label('TEAM', 'Optional. For example a collaborator, or the firm the work was done at'), optional('credit', 'In collaboration with …', '与 … 合作')),
-    el('label', { className: 'field' }, label('STATUS', 'Shown on the project page'), statusSelect()),
+    el('label', { className: 'field' }, label('STATUS', 'Shown on the project page'), choiceSelect('status', STATUSES)),
     el('div', { className: 'field' }, label('AWARD', 'Optional'), optional('award', 'AIANYS 2023 Design Awards Winner', '2023 年 AIANYS 设计奖')),
     el('label', { className: 'field' }, label('PHOTOGRAPHY', 'Optional. Photographer name(s)'),
       input(p.photos ?? '', v => { if (v.trim()) p.photos = v; else delete p.photos; }, { maxLength: 80 })));

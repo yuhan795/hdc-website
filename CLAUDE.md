@@ -57,7 +57,7 @@ Nav · Hero · marquee · Studio (`#studio`, dark panel, two columns) · Practic
 - To add a project: use the admin (NEW PROJECT; FIND FROM ADDRESS geocodes with OpenStreetMap Nominatim). By hand: add a block to `content/projects.json`.
 - Source material lives in `H:\My Drive\Projects` (one folder per job). Only publish the studio's own renderings, drawings and photos — not listing photos, reference images, or contracts/invoices/fees.
 
-Current projects (Nov 2026), in list order (most images first; names were changed from street addresses on 2026-11-18, slugs kept): Jerkinhead House, Gray House, Not-A-Cabin (6910 NY-28), Dalongyi LIC (42-22 Crescent St, with Liyang Wang, 2022), Sharon House, Art Storage Building, Fifth Avenue Apartment, CPW Apartment, The Henry Residence (211 W 84th St), The Elements Residence (555 W 59th St), Oncept Soho Store (45 Great Jones St). Gray/Sharon/Jerkinhead/Art Storage/Fifth Avenue/CPW are Chen Gong's work at Ted Porter Architecture (credited on each page). Removed: 175 W 95th St, Le Bon Vivant, 11-12 Main Ave, 21 Greenway.
+Current projects (Nov 2026), in list order (most images first; names were changed from street addresses on 2026-11-18, slugs kept): Jerkinhead House, Gray House, Not-A-Cabin (6910 NY-28), Dalongyi LIC (42-22 Crescent St, with Liyang Wang, 2022), Sharon House, Art Storage Building, Fifth Avenue Apartment, CPW Apartment, The Henry Residence (211 W 84th St), The Elements Residence (555 W 59th St), Oncept Soho Store (45 Great Jones St). Gray/Sharon/Jerkinhead/Art Storage/Fifth Avenue/CPW are Gong Chen's work at Ted Porter Architecture (credited on each page; first name Gong, last name Chen, so always "Gong Chen"). Removed: 175 W 95th St, Le Bon Vivant, 11-12 Main Ave, 21 Greenway.
 
 ## Admin
 

@@ -168,8 +168,10 @@
       row.querySelector('.prow-n').textContent = String(i + 1).padStart(2, '0');
       row.querySelectorAll('.prow-a span')[0].textContent = p.address;
       row.querySelectorAll('.prow-a span')[1].textContent = p.address_zh || p.address;
-      row.querySelectorAll('.prow-t span')[0].textContent = p.type.en;
-      row.querySelectorAll('.prow-t span')[1].textContent = p.type.zh;
+      // The list's middle column shows the services (Interior, Architecture, …).
+      var svc = p.services || p.type || {};
+      row.querySelectorAll('.prow-t span')[0].textContent = svc.en || '';
+      row.querySelectorAll('.prow-t span')[1].textContent = svc.zh || svc.en || '';
       row.querySelectorAll('.prow-l span')[0].textContent = p.location.en;
       row.querySelectorAll('.prow-l span')[1].textContent = p.location.zh;
       function dot(on) {
