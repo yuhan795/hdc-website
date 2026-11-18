@@ -359,8 +359,6 @@ async function publish() {
       if (!upload.sha) {
         setStatus(`Uploading ${index + 1} of ${pending.length}…`);
         const body = `{"encoding":"base64","content":"${await toBase64(upload.blob)}"}`;
-        // The online server accepts at most 4.5 MB per request.
-        if (body.length > 4.3 * 1024 * 1024) throw new Error(`${path.split('/').pop()} is too large to upload. Use a smaller image`);
         upload.sha = (await post(`/api/upload?path=${encodeURIComponent(path)}`, body, 'Upload failed')).sha;
       }
       files.unshift({ path, sha: upload.sha });

@@ -1,6 +1,0 @@
-{
-  "headers": [
-    { "source": "/admin/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] },
-    { "source": "/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] }
-  ]
-}

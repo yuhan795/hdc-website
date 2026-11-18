@@ -36,7 +36,7 @@ The owner writes in Chinese or English; reply in the language they used.
 | `admin/` | Content admin (adapted from BAD STUDIO's): project list, then per project a live preview on the left and fields on the right. PUBLISH saves `content/projects.json` + uploads. |
 | `lib/auth.mjs`, `lib/save-rules.mjs` | Login (signed `hdc_session` cookie) and what the admin may save. Copied from BAD STUDIO. |
 | `tools/dev-server.mjs` | Local server with the admin API; saves to disk. Credentials in `.dev.vars` (gitignored, never commit). |
-| `api/*.js`, `lib/github.mjs`, `vercel.json`, `package.json` | The online admin's Vercel functions (Web `GET`/`POST` handlers, ES modules). |
+| `functions/api/*.js`, `lib/github.mjs`, `_routes.json`, `_headers` | The online admin's Cloudflare Pages functions, plus routing and cache rules. |
 | `assets/js/map.js` | Projects map. |
 | `assets/fonts/` | Neue Montreal (body) and Space Grotesk (HDC. logo). |
 
@@ -62,9 +62,8 @@ Current projects (Nov 2026): HDC's own — 211 W 84th St, 555 W 59th St (condo r
 ## Admin
 
 - Locally: `node tools/dev-server.mjs`, open http://localhost:5190/admin/, log in with `.dev.vars`. PUBLISH writes the files on disk; then commit and push as usual.
-- Online: a Vercel project (team `hdc15`) imported from this repo serves the same files plus the functions in `api/` (`login`, `logout`, `me`, `upload`, `save`; shared code in `lib/`). Admin URL: `https://<vercel project>.vercel.app/admin/`. PUBLISH commits to `main` through the GitHub API; GitHub Pages then redeploys hanzdesigncollective.com (~1 min). The public site stays on GitHub Pages — Vercel is only for the admin (`vercel.json` marks it noindex).
-- Vercel environment variables (Production): `ADMIN_USER`, `ADMIN_PASSWORD`, `SESSION_SECRET`, `GITHUB_TOKEN` (fine-grained, Contents read/write on this repo only), `GITHUB_REPO=yuhan795/hdc-website`, `GITHUB_BRANCH=main`. Never write their values into the repo, chat or commits.
-- Vercel accepts at most 4.5 MB per request, so each upload must be under ~3 MB (the admin converts images to WebP, max 2000 px, which keeps them well under).
+- Online (being set up Nov 2026): the whole site moves from GitHub Pages to Cloudflare Pages (Yuhan's own Cloudflare account, free plan, commercial use allowed), so the admin is at https://hanzdesigncollective.com/admin/. Same setup as BAD STUDIO: build command empty, output directory = repo root, functions in `functions/api/` (`login`, `logout`, `me`, `upload`, `save`; shared code in `lib/`), `_routes.json` limits functions to `/api/*`, `_headers` sets caching. PUBLISH commits to `main` through the GitHub API; Cloudflare redeploys in under a minute. DNS: nameservers moved from Squarespace to Cloudflare (domain still registered at Squarespace). Vercel was considered but dropped: its free Hobby plan is non-commercial only.
+- Cloudflare environment variables (Production, encrypted): `ADMIN_USER`, `ADMIN_PASSWORD`, `SESSION_SECRET`, `GITHUB_TOKEN` (fine-grained, Contents read/write on this repo only), `GITHUB_REPO=yuhan795/hdc-website`, `GITHUB_BRANCH=main`. Never write their values into the repo, chat or commits.
 - Pull before working: the admin commits straight to `main`.
 - Code changes never edit `content/projects.json` or `assets/uploads/` without saying so — those belong to the admin.
 

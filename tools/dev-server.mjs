@@ -77,7 +77,7 @@ async function serve(req, res) {
   const path = decodeURIComponent(new URL(req.url, 'http://x').pathname).replace(/^\/+/, '');
   let full = inside(path);
   // Dotfiles (.dev.vars holds the login) and the server code are never served.
-  if (!full || path.split('/').some(part => part.startsWith('.')) || /^(lib|tools|api)\//.test(path)) return send(res, 403, 'Forbidden', 'text/plain');
+  if (!full || path.split('/').some(part => part.startsWith('.')) || /^(lib|tools|functions)\//.test(path)) return send(res, 403, 'Forbidden', 'text/plain');
   try {
     // Like Cloudflare Pages, /admin/login also serves admin/login.html.
     if (!extname(full)) full = await stat(`${full}.html`).then(() => `${full}.html`, () => full);

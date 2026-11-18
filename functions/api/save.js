@@ -1,11 +1,12 @@
-// Vercel function: publishes admin changes as one commit to GitHub; GitHub Pages then
-// redeploys hanzdesigncollective.com (about a minute).
-import { readSession } from '../lib/auth.mjs';
-import { checkFiles, checkUnchanged } from '../lib/save-rules.mjs';
-import { github, json } from '../lib/github.mjs';
+// Cloudflare Pages function: publishes admin changes as one commit to GitHub; Cloudflare Pages
+// then redeploys hanzdesigncollective.com (under a minute).
+import { readSession } from '../../lib/auth.mjs';
+import { checkFiles, checkUnchanged } from '../../lib/save-rules.mjs';
+import { github, json } from '../../lib/github.mjs';
 
-export async function POST(request) {
-  const env = process.env;
+const decode = base64 => new TextDecoder().decode(Uint8Array.from(atob(base64.replace(/\s/g, '')), c => c.charCodeAt(0)));
+
+export async function onRequestPost({ request, env }) {
   const session = await readSession(env, request.headers.get('Cookie'));
   if (!session) return json({ error: 'Please log in again' }, 401);
   if (!env.GITHUB_TOKEN || !env.GITHUB_REPO) return json({ error: 'Publishing is not configured on the server' }, 500);
@@ -18,8 +19,7 @@ export async function POST(request) {
     const branch = env.GITHUB_BRANCH || 'main';
     const conflict = await checkUnchanged(files, async path => {
       try {
-        const { content } = await github(env, `/contents/${path}?ref=${branch}`);
-        return Buffer.from(content, 'base64').toString('utf8');
+        return decode((await github(env, `/contents/${path}?ref=${branch}`)).content);
       } catch (error) {
         if (String(error.message).startsWith('GitHub 404')) return null;
         throw error;
