@@ -162,10 +162,19 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .tgl{background:none;border:none;padding:4px 2px;cursor:pointer;color:var(--ink);font-family:inherit;font-size:11.5px;font-weight:500;letter-spacing:.16em;display:flex;align-items:center}
 .tgl:hover{opacity:.55}
 .tglsep{width:1px;height:12px;background:var(--line);display:block}
-.hero{min-height:calc(100vh - 74px);display:flex;flex-direction:column;justify-content:space-between;padding-top:clamp(40px,7vw,86px);padding-bottom:clamp(34px,4vw,56px)}
+.hero{position:relative;min-height:calc(100vh - 74px);display:flex;flex-direction:column;justify-content:space-between;padding-top:clamp(40px,7vw,86px);padding-bottom:clamp(34px,4vw,56px)}
 /* Scroll-lit words in the Studio panel (wrapped by site.js) */
 .lit-w{opacity:.2}
 
+/* Floating project cards in the hero (assets/js/herocards.js) */
+.hero>div:not(.hcards){position:relative;z-index:20;pointer-events:none}
+.hero>div span{pointer-events:auto}
+.hcards{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hcard{position:absolute;display:block;pointer-events:auto;background:#fff;color:#141414;outline:1px solid #141414;outline-offset:-1px;padding:5px 5px 0;text-decoration:none;will-change:transform;filter:blur(var(--blur,0)) grayscale(var(--grey,0));opacity:0;transition:opacity .9s ease var(--delay,0ms),filter .4s ease,box-shadow .3s ease}
+.hcard.in{opacity:1}
+.hcard img{display:block;width:100%;height:auto}
+.hcard-cap{display:block;padding:.55em 0 .6em;font-size:clamp(7.5px,.62vw,10px);font-weight:500;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hcard:hover{filter:none;z-index:15!important;box-shadow:0 18px 40px rgba(0,0,0,.18)}
 .heroeye{display:flex;justify-content:space-between;align-items:flex-start;font-size:12px}
 .herolock{display:flex;align-items:baseline;gap:clamp(14px,2vw,34px);flex-wrap:wrap}
 .heroH{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(88px,20vw,320px);letter-spacing:-.055em;line-height:.7;margin:0 0 0 -.02em}
