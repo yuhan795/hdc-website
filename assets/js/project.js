@@ -99,17 +99,25 @@
     var ratio = note.w / note.h;
     // A little larger than shown at the back: depth scales far cards down to about 0.65.
     var base = innerWidth < 640 ? innerWidth * 0.52 : clamp(innerWidth * 0.24, 260, 500);
-    note.width = Math.min(base * (ratio < 1 ? 0.72 : 1) * note.jitter * fit, board.clientWidth - 16);
-    note.el.style.width = note.width + 'px';
-    note.el.style.setProperty('--frame', (note.width * 0.045).toFixed(1) + 'px'); // white margin around the image
-    note.height = note.el.offsetHeight || note.width / ratio; // includes the frame
-    var maxHeight = infoTop() - topInset() - 8;
-    if (note.height > maxHeight) {
-      note.width *= maxHeight / note.height;
-      note.el.style.width = note.width + 'px';
-      note.el.style.setProperty('--frame', (note.width * 0.045).toFixed(1) + 'px');
-      note.height = note.el.offsetHeight;
+    var width = Math.min(base * (ratio < 1 ? 0.72 : 1) * note.jitter * fit, board.clientWidth - 16);
+    // Width animates in CSS, so measure the final size with the animation off, then animate
+    // from the current width. (Reading the height mid-animation gave a wrong size, and the
+    // next enlarge of that card came out far too small.)
+    var from = note.el.style.width;
+    note.el.style.transition = 'none';
+    function measure(w) {
+      note.el.style.width = w + 'px';
+      note.el.style.setProperty('--frame', (w * 0.045).toFixed(1) + 'px'); // white margin around the image
+      return note.el.offsetHeight; // includes the frame
     }
+    var height = measure(width);
+    var maxHeight = infoTop() - topInset() - 8;
+    if (height > maxHeight) { width *= maxHeight / height; height = measure(width); }
+    note.width = width;
+    note.height = height || width / ratio;
+    if (from && from !== note.el.style.width) { note.el.style.width = from; void note.el.offsetHeight; }
+    note.el.style.transition = '';
+    note.el.style.width = width + 'px';
   }
   function fitBoard() {
     boardHeight = innerHeight;
