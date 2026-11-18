@@ -278,7 +278,8 @@ body.project-page{height:100svh;overflow:hidden}
 .pinfo a{pointer-events:auto}
 .pback{display:inline-flex;gap:10px;font-size:11px;color:var(--grey);text-decoration:none;margin-bottom:10px}
 .pback:hover{color:var(--ink)}
-.ptitle{font-weight:300;font-size:clamp(26px,2.6vw,40px);letter-spacing:-.025em;line-height:1.1;margin:0 0 14px}
+/* The project name is not shown in the bar (only Location / Services / Team), but stays in the page for screen readers */
+.ptitle{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
 /* Details sit side by side, each label above its value, so the bar stays low */
 .pmeta{display:flex;flex-wrap:wrap;gap:8px 32px;margin:0;font-size:13px;line-height:1.35}
 .pmeta div{max-width:280px}
@@ -300,7 +301,6 @@ body.project-page{height:100svh;overflow:hidden}
 }
 @media (max-width:640px){
 .pinfo{max-width:100%}
-.ptitle{font-size:24px;margin-bottom:10px}
 .pmeta{font-size:12px;gap:6px 18px}
 .pmeta div{max-width:46%}
 .pnext{display:none}

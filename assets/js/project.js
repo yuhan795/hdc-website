@@ -44,13 +44,10 @@
     document.getElementById('ptitle').replaceChildren(both(nameOf(p)));
     var meta = document.getElementById('pmeta');
     meta.replaceChildren();
+    // The bar under the cards shows only these three; the title stays for screen readers.
     [[{ en: 'Location', zh: '地点' }, p.location],
-     [{ en: 'Type', zh: '类型' }, p.type],
      [{ en: 'Services', zh: '服务' }, p.services],
-     [{ en: 'Year', zh: '年份' }, p.year && { en: String(p.year), zh: String(p.year) }],
-     [{ en: 'Award', zh: '奖项' }, p.award],
-     [{ en: 'Team', zh: '团队' }, p.credit],
-     [{ en: 'Photography', zh: '摄影' }, p.photos && { en: p.photos, zh: p.photos }]
+     [{ en: 'Team', zh: '团队' }, p.credit]
     ].forEach(function (r) {
       if (!r[1] || !r[1].en) return;
       var dt = document.createElement('dt'), dd = document.createElement('dd');
@@ -189,8 +186,8 @@
       return r;
     }
     function join(a, b) {
-      var en = [a && a.en, b && b.en].filter(Boolean).join(' — ');
-      var zh = [a && (a.zh || a.en), b && (b.zh || b.en)].filter(Boolean).join(' — ');
+      var en = [a && a.en, b && b.en].filter(Boolean).join(' · ');
+      var zh = [a && (a.zh || a.en), b && (b.zh || b.en)].filter(Boolean).join(' · ');
       return both({ en: en, zh: zh });
     }
     var year = p.year ? String(p.year) : '';

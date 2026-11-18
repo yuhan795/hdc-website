@@ -240,6 +240,10 @@
         "en": "Master planning · Resort concept · Modular guest units",
         "zh": "总体规划 · 度假村概念 · 模块化客房"
       },
+      "credit": {
+        "en": "Yuhan Zhang",
+        "zh": "Yuhan Zhang"
+      },
       "lat": 42.38404,
       "lng": -75.00508,
       "inset": true,
@@ -334,6 +338,10 @@
         "en": "Interior design advisory · Contractor coordination",
         "zh": "室内设计顾问 · 施工协调"
       },
+      "credit": {
+        "en": "Yuhan Zhang, Gong Chen",
+        "zh": "Yuhan Zhang, Gong Chen"
+      },
       "lat": 40.77164,
       "lng": -73.98936,
       "images": [
@@ -413,7 +421,7 @@
     },
     {
       "slug": "42-22-crescent-st",
-      "address": "LIC Restaurant",
+      "address": "Dalongyi LIC",
       "year": 2022,
       "type": {
         "en": "Restaurant",
@@ -428,8 +436,8 @@
         "zh": "餐厅设计"
       },
       "credit": {
-        "en": "In collaboration with Liyang Wang",
-        "zh": "与 Liyang Wang 合作"
+        "en": "Yuhan Zhang, Liyang Wang",
+        "zh": "Yuhan Zhang, Liyang Wang"
       },
       "lat": 40.75017,
       "lng": -73.94135,
@@ -605,6 +613,10 @@
       "services": {
         "en": "Interior alteration · Condo board approval",
         "zh": "室内改造 · 公寓管委会报批"
+      },
+      "credit": {
+        "en": "Yuhan Zhang, Gong Chen",
+        "zh": "Yuhan Zhang, Gong Chen"
       },
       "lat": 40.78694,
       "lng": -73.97676,
@@ -902,6 +914,10 @@
       "services": {
         "en": "Custom fixtures · Fabrication",
         "zh": "定制展示道具 · 制作安装"
+      },
+      "credit": {
+        "en": "Yuhan Zhang",
+        "zh": "Yuhan Zhang"
       },
       "lat": 40.72656,
       "lng": -73.9927,
