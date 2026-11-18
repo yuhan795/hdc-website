@@ -3,7 +3,6 @@
     {
       "slug": "jerkinhead-house",
       "address": "Jerkinhead House",
-      "address_zh": "折檐屋",
       "type": {
         "en": "Renovation & Addition",
         "zh": "改造与加建"
@@ -17,8 +16,8 @@
         "zh": "建筑设计"
       },
       "credit": {
-        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
-        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
+        "en": "Chen Gong, at Ted Porter Architecture",
+        "zh": "Chen Gong，Ted Porter Architecture"
       },
       "photos": "ImagenSubliminal & Gong Chen",
       "lat": 40.9979,
@@ -118,7 +117,6 @@
     {
       "slug": "gray-house",
       "address": "Gray House",
-      "address_zh": "灰屋",
       "type": {
         "en": "New Build",
         "zh": "新建住宅"
@@ -132,8 +130,8 @@
         "zh": "建筑设计"
       },
       "credit": {
-        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
-        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
+        "en": "Chen Gong, at Ted Porter Architecture",
+        "zh": "Chen Gong，Ted Porter Architecture"
       },
       "photos": "ImagenSubliminal",
       "award": {
@@ -229,7 +227,6 @@
     {
       "slug": "6910-ny-28",
       "address": "Not-A-Cabin",
-      "address_zh": "非木屋",
       "year": 2025,
       "type": {
         "en": "Resort · Master Planning",
@@ -322,9 +319,101 @@
       ]
     },
     {
+      "slug": "555-w-59th-st",
+      "address": "The Elements Residence",
+      "year": 2026,
+      "type": {
+        "en": "Renovation & Addition",
+        "zh": "改造与加建"
+      },
+      "location": {
+        "en": "Lincoln Square, Manhattan",
+        "zh": "曼哈顿林肯广场"
+      },
+      "services": {
+        "en": "Interior design advisory · Contractor coordination",
+        "zh": "室内设计顾问 · 施工协调"
+      },
+      "lat": 40.77164,
+      "lng": -73.98936,
+      "images": [
+        {
+          "image": "assets/projects/555-w-59th-st/01.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Primary bathroom shower",
+            "zh": "主卫淋浴间"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/02.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Bathroom with glass shower",
+            "zh": "玻璃淋浴浴室"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/03.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Floor plan",
+            "zh": "平面图"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/04.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "New wall framing",
+            "zh": "新墙体龙骨"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/05.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "Plumbing rough-in",
+            "zh": "给排水预埋"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/06.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "Shower framing",
+            "zh": "淋浴间龙骨"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/07.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "Wall tile in progress",
+            "zh": "墙砖铺贴中"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/08.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "Wall tile in progress",
+            "zh": "墙砖铺贴中"
+          }
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/09.jpg",
+          "kind": "construction",
+          "caption": {
+            "en": "Wall tile in progress",
+            "zh": "墙砖铺贴中"
+          }
+        }
+      ]
+    },
+    {
       "slug": "42-22-crescent-st",
       "address": "LIC Restaurant",
-      "address_zh": "长岛市餐厅",
       "year": 2022,
       "type": {
         "en": "Restaurant",
@@ -414,7 +503,6 @@
     {
       "slug": "sharon-house",
       "address": "Sharon House",
-      "address_zh": "沙伦住宅",
       "type": {
         "en": "Renovation & Addition",
         "zh": "改造与加建"
@@ -428,8 +516,8 @@
         "zh": "建筑设计"
       },
       "credit": {
-        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
-        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
+        "en": "Chen Gong, at Ted Porter Architecture",
+        "zh": "Chen Gong，Ted Porter Architecture"
       },
       "photos": "Jeffrey Gray Brandsted",
       "lat": 41.879,
@@ -503,9 +591,85 @@
       ]
     },
     {
+      "slug": "211-w-84th-st",
+      "address": "The Henry Residence",
+      "year": 2026,
+      "type": {
+        "en": "Renovation & Addition",
+        "zh": "改造与加建"
+      },
+      "location": {
+        "en": "Upper West Side, Manhattan",
+        "zh": "曼哈顿上西区"
+      },
+      "services": {
+        "en": "Interior alteration · Condo board approval",
+        "zh": "室内改造 · 公寓管委会报批"
+      },
+      "lat": 40.78694,
+      "lng": -73.97676,
+      "images": [
+        {
+          "image": "assets/projects/211-w-84th-st/01.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Living and dining room",
+            "zh": "客厅与餐厅"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/02.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Living room",
+            "zh": "客厅"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/03.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Living room",
+            "zh": "客厅"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/04.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Kitchen",
+            "zh": "厨房"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/05.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Primary bathroom",
+            "zh": "主卫"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/06.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Powder room",
+            "zh": "客卫"
+          }
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/07.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Floor plan",
+            "zh": "平面图"
+          }
+        }
+      ]
+    },
+    {
       "slug": "art-storage-building",
       "address": "Art Storage Building",
-      "address_zh": "艺术品仓储建筑",
       "type": {
         "en": "Land Development & New Build",
         "zh": "场地开发与新建"
@@ -519,8 +683,8 @@
         "zh": "建筑设计"
       },
       "credit": {
-        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
-        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
+        "en": "Chen Gong, at Ted Porter Architecture",
+        "zh": "Chen Gong，Ted Porter Architecture"
       },
       "photos": "Gong Chen",
       "lat": 41.1065,
@@ -580,7 +744,6 @@
     {
       "slug": "fifth-avenue-apartment",
       "address": "Fifth Avenue Apartment",
-      "address_zh": "第五大道公寓",
       "type": {
         "en": "Gut Renovation",
         "zh": "公寓整体翻新"
@@ -594,8 +757,8 @@
         "zh": "室内建筑设计"
       },
       "credit": {
-        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
-        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
+        "en": "Chen Gong, at Ted Porter Architecture",
+        "zh": "Chen Gong，Ted Porter Architecture"
       },
       "photos": "ImagenSubliminal",
       "lat": 40.779,
@@ -654,7 +817,6 @@
     {
       "slug": "cpw-apartment",
       "address": "CPW Apartment",
-      "address_zh": "中央公园西公寓",
       "type": {
         "en": "Gut Renovation",
         "zh": "公寓整体翻新"
@@ -668,8 +830,8 @@
         "zh": "室内建筑设计"
       },
       "credit": {
-        "en": "Chen Gong, at Ted Porter Architecture (previous firm)",
-        "zh": "Chen Gong（于 Ted Porter Architecture 任职期间）"
+        "en": "Chen Gong, at Ted Porter Architecture",
+        "zh": "Chen Gong，Ted Porter Architecture"
       },
       "photos": "ImagenSubliminal",
       "lat": 40.7875,
@@ -726,133 +888,8 @@
       ]
     },
     {
-      "slug": "211-w-84th-st",
-      "address": "The Henry Residence",
-      "address_zh": "亨利公寓",
-      "year": 2026,
-      "type": {
-        "en": "Renovation & Addition",
-        "zh": "改造与加建"
-      },
-      "location": {
-        "en": "Upper West Side, Manhattan",
-        "zh": "曼哈顿上西区"
-      },
-      "services": {
-        "en": "Interior alteration · Condo board approval",
-        "zh": "室内改造 · 公寓管委会报批"
-      },
-      "lat": 40.78694,
-      "lng": -73.97676,
-      "images": [
-        {
-          "image": "assets/projects/211-w-84th-st/01.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Living and dining room",
-            "zh": "客厅与餐厅"
-          }
-        },
-        {
-          "image": "assets/projects/211-w-84th-st/02.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Kitchen",
-            "zh": "厨房"
-          }
-        },
-        {
-          "image": "assets/projects/211-w-84th-st/03.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Primary bathroom",
-            "zh": "主卫"
-          }
-        },
-        {
-          "image": "assets/projects/211-w-84th-st/04.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Powder room",
-            "zh": "客卫"
-          }
-        },
-        {
-          "image": "assets/projects/211-w-84th-st/05.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Floor plan",
-            "zh": "平面图"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "555-w-59th-st",
-      "address": "The Elements Residence",
-      "address_zh": "元素公寓",
-      "year": 2026,
-      "type": {
-        "en": "Renovation & Addition",
-        "zh": "改造与加建"
-      },
-      "location": {
-        "en": "Lincoln Square, Manhattan",
-        "zh": "曼哈顿林肯广场"
-      },
-      "services": {
-        "en": "Interior design advisory · Contractor coordination",
-        "zh": "室内设计顾问 · 施工协调"
-      },
-      "lat": 40.77164,
-      "lng": -73.98936,
-      "images": [
-        {
-          "image": "assets/projects/555-w-59th-st/01.jpg",
-          "kind": "board",
-          "caption": {
-            "en": "Wall tile — Vortex Prime",
-            "zh": "墙砖 — Vortex Prime"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/02.jpg",
-          "kind": "board",
-          "caption": {
-            "en": "Shower floor — Matera Stone mosaic",
-            "zh": "淋浴地面 — Matera 石材马赛克"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/03.jpg",
-          "kind": "board",
-          "caption": {
-            "en": "Vanity — walnut, quartz top",
-            "zh": "浴室柜 — 胡桃木，石英台面"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/04.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Floor plan",
-            "zh": "平面图"
-          }
-        },
-        {
-          "image": "assets/projects/555-w-59th-st/05.jpg",
-          "kind": "site",
-          "caption": {
-            "en": "Bathroom before renovation",
-            "zh": "翻新前的浴室"
-          }
-        }
-      ]
-    },
-    {
       "slug": "45-great-jones-st",
       "address": "Oncept Soho Store",
-      "address_zh": "Oncept 苏荷店",
       "year": 2026,
       "type": {
         "en": "Retail",

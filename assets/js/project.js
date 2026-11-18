@@ -7,6 +7,7 @@
     drawing: { en: 'Drawing',            zh: '图纸' },
     board:   { en: 'Material selection', zh: '材料选样' },
     site:    { en: 'Existing condition', zh: '现场' },
+    construction: { en: 'Construction', zh: '施工' },
     built:   { en: 'Completed',          zh: '完成实景' },
     photo:   { en: 'Photo',              zh: '照片' }
   };
@@ -48,7 +49,7 @@
      [{ en: 'Services', zh: '服务' }, p.services],
      [{ en: 'Year', zh: '年份' }, p.year && { en: String(p.year), zh: String(p.year) }],
      [{ en: 'Award', zh: '奖项' }, p.award],
-     [{ en: 'Credit', zh: '署名' }, p.credit],
+     [{ en: 'Team', zh: '团队' }, p.credit],
      [{ en: 'Photography', zh: '摄影' }, p.photos && { en: p.photos, zh: p.photos }]
     ].forEach(function (r) {
       if (!r[1] || !r[1].en) return;

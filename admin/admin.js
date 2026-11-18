@@ -7,7 +7,7 @@ const MAX_SIDE = 2000;             // longest side of an uploaded image, like th
 const MAX_FILE_SIZE = 25 * 1024 * 1024;
 const KINDS = [
   ['render', 'Rendering · 效果图'], ['drawing', 'Drawing · 图纸'], ['board', 'Material selection · 材料选样'],
-  ['site', 'Existing condition · 现场'], ['built', 'Completed · 完成实景'], ['photo', 'Photo · 照片'],
+  ['site', 'Existing condition · 现场'], ['construction', 'Construction · 施工'], ['built', 'Completed · 完成实景'], ['photo', 'Photo · 照片'],
 ];
 
 const state = { content: null, saved: '', uploads: new Map(), project: null, busy: false };
@@ -190,7 +190,7 @@ function renderPanel(p) {
   panel.lastChild.firstChild.append(pageLink);
 
   // The Chinese name is optional; without it the English name shows in 中文 mode too.
-  panel.append(el('div', { className: 'field' }, label('NAME', 'English · 中文. The big title on the page, in the list and on the map'),
+  panel.append(el('div', { className: 'field' }, label('NAME', 'The big title on the page, in the list and on the map. Shown in English in both languages; fill the 中文 box only to use a Chinese name'),
     el('div', { className: 'pair' },
       input(p.address, v => {
         p.address = v;
@@ -220,7 +220,7 @@ function renderPanel(p) {
       input(value.zh, v => { value.zh = v; set(); }, { placeholder: zh }));
   };
   panel.append(
-    el('div', { className: 'field' }, label('CREDIT', 'Optional. For example a collaborator, or work done at a previous firm'), optional('credit', 'In collaboration with …', '与 … 合作')),
+    el('div', { className: 'field' }, label('TEAM', 'Optional. For example a collaborator, or the firm the work was done at'), optional('credit', 'In collaboration with …', '与 … 合作')),
     el('div', { className: 'field' }, label('AWARD', 'Optional'), optional('award', 'AIANYS 2023 Design Awards Winner', '2023 年 AIANYS 设计奖')),
     el('label', { className: 'field' }, label('PHOTOGRAPHY', 'Optional. Photographer name(s)'),
       input(p.photos ?? '', v => { if (v.trim()) p.photos = v; else delete p.photos; }, { maxLength: 80 })));
