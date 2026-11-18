@@ -163,6 +163,9 @@ a{color:var(--ink)}a:hover{color:var(--grey)}
 .tgl:hover{opacity:.55}
 .tglsep{width:1px;height:12px;background:var(--line);display:block}
 .hero{min-height:calc(100vh - 74px);display:flex;flex-direction:column;justify-content:space-between;padding-top:clamp(40px,7vw,86px);padding-bottom:clamp(34px,4vw,56px)}
+/* Scroll-lit words in the Studio panel (wrapped by site.js) */
+.lit-w{opacity:.2}
+
 .heroeye{display:flex;justify-content:space-between;align-items:flex-start;font-size:12px}
 .herolock{display:flex;align-items:baseline;gap:clamp(14px,2vw,34px);flex-wrap:wrap}
 .heroH{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(88px,20vw,320px);letter-spacing:-.055em;line-height:.7;margin:0 0 0 -.02em}
