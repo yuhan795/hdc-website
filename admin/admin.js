@@ -288,6 +288,10 @@ function renderPanel(p) {
     const kind = el('select', { title: 'What the image shows' },
       ...KINDS.map(([value, text]) => el('option', { value, textContent: text, selected: entry.kind === value })));
     kind.addEventListener('change', () => { entry.kind = kind.value; changed(); });
+    // Card size on the project page: Auto follows the image's resolution.
+    const sizeSel = el('select', { title: 'Card size on the project page' },
+      ...[['', 'Auto size'], ['large', 'Large, in front'], ['small', 'Small, at the back']].map(([value, text]) => el('option', { value, textContent: text, selected: (entry.size ?? '') === value })));
+    sizeSel.addEventListener('change', () => { if (sizeSel.value) entry.size = sizeSel.value; else delete entry.size; changed(); });
     const move = (text, title, to) => {
       const b = el('button', { type: 'button', className: 'icon-button', textContent: text, title });
       b.addEventListener('click', () => {
@@ -301,7 +305,7 @@ function renderPanel(p) {
     remove.addEventListener('click', () => { p.images.splice(index, 1); renderPanel(p); changed(); });
     list.append(el('div', { className: 'image-row' },
       el('img', { src: preview(entry.image), alt: '' }),
-      el('div', { className: 'row' }, kind, index === 0 ? el('span', { className: 'cover-tag', textContent: 'COVER' }) : ''),
+      el('div', { className: 'row' }, kind, sizeSel, index === 0 ? el('span', { className: 'cover-tag', textContent: 'COVER' }) : ''),
       el('div', { className: 'image-tools' }, move('↑', 'Earlier', index - 1), move('↓', 'Later', index + 1), remove),
       pair(entry, 'caption', 'Caption', '图注')));
   });

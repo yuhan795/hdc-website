@@ -143,7 +143,18 @@
     });
   }
 
-  function makeNote(entry, index, img) {
+  // How big and how far forward a card sits. An image can be marked size "large" (big, at the
+  // front) or "small" (small, at the back) in the content; otherwise sharper images (more
+  // pixels; rank 0 = least, 1 = most in this project) tend to come larger and nearer.
+  function placement(entry, rank) {
+    var r = Math.random();
+    if (entry.size === 'large') return { jitter: 1.35 + r * 0.3, depth: 0.86 + Math.random() * 0.14 };
+    if (entry.size === 'small') return { jitter: 0.45 + r * 0.2, depth: 0.15 + Math.random() * 0.25 };
+    var t = 0.55 * rank + 0.45 * Math.random();
+    return { jitter: 0.5 + Math.pow(0.7 * rank + 0.3 * r, 1.4) * 1.15, depth: 0.15 + t * 0.85 };
+  }
+
+  function makeNote(entry, index, img, rank) {
     var el = document.createElement('button');
     el.type = 'button';
     el.className = 'pcard';
@@ -153,9 +164,9 @@
     var frame = document.createElement('span');
     frame.className = 'pframe';
     el.append(img, frame);
+    var at = placement(entry, rank || 0);
     var note = { el: el, index: index, w: img.naturalWidth || 4, h: img.naturalHeight || 3,
-      // Mostly small and medium cards, with a few large ones.
-      jitter: 0.5 + Math.pow(Math.random(), 1.6) * 1.15, depth: 0.15 + Math.random() * 0.85, x: 0, y: 0, width: 0, height: 0, suppressClick: false };
+      jitter: at.jitter, depth: at.depth, x: 0, y: 0, width: 0, height: 0, suppressClick: false };
     notes.push(note); board.appendChild(el); fillFrame(note); size(note);
     el.addEventListener('pointerenter', function () { if (!drag) front(note); });
     el.addEventListener('pointerdown', function (e) { startDrag(e, note); });
@@ -223,7 +234,13 @@
       // Cards appear where they belong instead of gliding in from the corner.
       board.classList.add('setup');
       requestAnimationFrame(function () { requestAnimationFrame(function () { board.classList.remove('setup'); }); });
-      var created = order.map(function (i) { return makeNote(images[i], i, loaded[i]); });
+      // Rank each image by its pixel count within this project (0 = smallest, 1 = largest).
+      var areas = order.map(function (i) { return loaded[i].naturalWidth * loaded[i].naturalHeight; });
+      var sorted = areas.slice().sort(function (a, b) { return a - b; });
+      var created = order.map(function (i, k) {
+        var rank = sorted.length > 1 ? sorted.indexOf(areas[k]) / (sorted.length - 1) : 1;
+        return makeNote(images[i], i, loaded[i], rank);
+      });
       fitBoard();
       fitCards();
       if (created.length === 1) {

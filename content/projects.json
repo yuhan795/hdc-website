@@ -3,6 +3,7 @@
     {
       "slug": "118-w-76th-st",
       "address": "UWS Townhouse",
+      "year": 2023,
       "type": {
         "en": "Townhouse Renovation",
         "zh": "联排别墅翻新"
@@ -19,6 +20,10 @@
         "en": "Yuhan Zhang, at SCDA Architects",
         "zh": "Yuhan Zhang，SCDA Architects"
       },
+      "status": {
+        "en": "Built",
+        "zh": "已建成"
+      },
       "lat": 40.7802,
       "lng": -73.97786,
       "images": [
@@ -28,7 +33,8 @@
           "caption": {
             "en": "Garden terrace",
             "zh": "花园露台"
-          }
+          },
+          "size": "large"
         },
         {
           "image": "assets/projects/118-w-76th-st/02.jpg",
@@ -36,7 +42,8 @@
           "caption": {
             "en": "Formal living room",
             "zh": "正式客厅"
-          }
+          },
+          "size": "large"
         },
         {
           "image": "assets/projects/118-w-76th-st/03.jpg",
@@ -44,7 +51,8 @@
           "caption": {
             "en": "Dining room",
             "zh": "餐厅"
-          }
+          },
+          "size": "large"
         },
         {
           "image": "assets/projects/118-w-76th-st/04.jpg",
@@ -52,7 +60,8 @@
           "caption": {
             "en": "Family room and kitchen",
             "zh": "家庭厅与厨房"
-          }
+          },
+          "size": "large"
         },
         {
           "image": "assets/projects/118-w-76th-st/05.jpg",
@@ -60,7 +69,8 @@
           "caption": {
             "en": "Lounge",
             "zh": "休闲厅"
-          }
+          },
+          "size": "large"
         },
         {
           "image": "assets/projects/118-w-76th-st/06.jpg",
@@ -68,7 +78,8 @@
           "caption": {
             "en": "Main bedroom",
             "zh": "主卧"
-          }
+          },
+          "size": "large"
         },
         {
           "image": "assets/projects/118-w-76th-st/07.jpg",
@@ -76,7 +87,8 @@
           "caption": {
             "en": "Wine cellar",
             "zh": "酒窖"
-          }
+          },
+          "size": "large"
         },
         {
           "image": "assets/projects/118-w-76th-st/08.jpg",
@@ -92,7 +104,8 @@
           "caption": {
             "en": "Dining room furniture and lighting",
             "zh": "餐厅家具与灯具"
-          }
+          },
+          "size": "small"
         },
         {
           "image": "assets/projects/118-w-76th-st/10.jpg",
@@ -100,7 +113,8 @@
           "caption": {
             "en": "Formal living room furniture",
             "zh": "正式客厅家具"
-          }
+          },
+          "size": "small"
         },
         {
           "image": "assets/projects/118-w-76th-st/11.jpg",
@@ -108,7 +122,8 @@
           "caption": {
             "en": "Furniture selection",
             "zh": "家具选型"
-          }
+          },
+          "size": "small"
         },
         {
           "image": "assets/projects/118-w-76th-st/12.jpg",
@@ -116,7 +131,8 @@
           "caption": {
             "en": "Typical wall panel, plan detail",
             "zh": "标准墙板平面节点"
-          }
+          },
+          "size": "small"
         },
         {
           "image": "assets/projects/118-w-76th-st/13.jpg",
@@ -124,7 +140,8 @@
           "caption": {
             "en": "Typical wall panel, section detail",
             "zh": "标准墙板剖面节点"
-          }
+          },
+          "size": "small"
         },
         {
           "image": "assets/projects/118-w-76th-st/14.jpg",
@@ -132,7 +149,8 @@
           "caption": {
             "en": "Vertical cove lighting, plan detail",
             "zh": "竖向灯槽平面节点"
-          }
+          },
+          "size": "small"
         },
         {
           "image": "assets/projects/118-w-76th-st/15.jpg",
@@ -140,7 +158,8 @@
           "caption": {
             "en": "Typical bathroom ceiling detail",
             "zh": "标准卫生间吊顶节点"
-          }
+          },
+          "size": "small"
         }
       ]
     },
@@ -486,108 +505,6 @@
       ]
     },
     {
-      "slug": "6910-ny-28",
-      "address": "Not-A-Cabin",
-      "year": 2025,
-      "type": {
-        "en": "Resort · Master Planning",
-        "zh": "度假村 · 总体规划"
-      },
-      "location": {
-        "en": "Upstate New York",
-        "zh": "纽约州北部"
-      },
-      "services": {
-        "en": "Master planning",
-        "zh": "总体规划"
-      },
-      "credit": {
-        "en": "Yuhan Zhang",
-        "zh": "Yuhan Zhang"
-      },
-      "status": {
-        "en": "Ongoing",
-        "zh": "进行中"
-      },
-      "lat": 42.38404,
-      "lng": -75.00508,
-      "inset": true,
-      "images": [
-        {
-          "image": "assets/projects/6910-ny-28/01.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Guest tent at night",
-            "zh": "夜间帐篷客房"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/02.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Guest units at golden hour",
-            "zh": "黄昏中的客房"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/03.jpg",
-          "kind": "render",
-          "caption": {
-            "en": "Woodland guest unit",
-            "zh": "林间客房"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/04.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Master plan",
-            "zh": "总体规划"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/05.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "Site analysis",
-            "zh": "场地分析"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/06.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "40 m² guest unit plan",
-            "zh": "40㎡客房平面图"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/07.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "51 m² suite plan, option A",
-            "zh": "51㎡套房平面图（方案 A）"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/08.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "51 m² suite plan, option B",
-            "zh": "51㎡套房平面图（方案 B）"
-          }
-        },
-        {
-          "image": "assets/projects/6910-ny-28/09.jpg",
-          "kind": "drawing",
-          "caption": {
-            "en": "80 m² suite plan",
-            "zh": "80㎡套房平面图"
-          }
-        }
-      ]
-    },
-    {
       "slug": "42-22-crescent-st",
       "address": "Dalongyi LIC",
       "year": 2022,
@@ -771,6 +688,106 @@
             "en": "Ground and second floor plans",
             "zh": "一层与二层平面图"
           }
+        }
+      ]
+    },
+    {
+      "slug": "6910-ny-28",
+      "address": "Not-A-Cabin",
+      "year": 2025,
+      "type": {
+        "en": "Resort · Master Planning",
+        "zh": "度假村 · 总体规划"
+      },
+      "location": {
+        "en": "Upstate New York",
+        "zh": "纽约州北部"
+      },
+      "services": {
+        "en": "Master planning",
+        "zh": "总体规划"
+      },
+      "credit": {
+        "en": "Yuhan Zhang",
+        "zh": "Yuhan Zhang"
+      },
+      "status": {
+        "en": "Ongoing",
+        "zh": "进行中"
+      },
+      "lat": 42.38404,
+      "lng": -75.00508,
+      "inset": true,
+      "images": [
+        {
+          "image": "assets/projects/6910-ny-28/02.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Guest units at golden hour",
+            "zh": "黄昏中的客房"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/03.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Woodland guest unit",
+            "zh": "林间客房"
+          }
+        },
+        {
+          "image": "assets/projects/6910-ny-28/04.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Master plan",
+            "zh": "总体规划"
+          },
+          "size": "large"
+        },
+        {
+          "image": "assets/projects/6910-ny-28/05.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Site analysis",
+            "zh": "场地分析"
+          },
+          "size": "large"
+        },
+        {
+          "image": "assets/projects/6910-ny-28/06.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "40 m² guest unit plan",
+            "zh": "40㎡客房平面图"
+          },
+          "size": "small"
+        },
+        {
+          "image": "assets/projects/6910-ny-28/07.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "51 m² suite plan, option A",
+            "zh": "51㎡套房平面图（方案 A）"
+          },
+          "size": "small"
+        },
+        {
+          "image": "assets/projects/6910-ny-28/08.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "51 m² suite plan, option B",
+            "zh": "51㎡套房平面图（方案 B）"
+          },
+          "size": "small"
+        },
+        {
+          "image": "assets/projects/6910-ny-28/09.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "80 m² suite plan",
+            "zh": "80㎡套房平面图"
+          },
+          "size": "small"
         }
       ]
     },
