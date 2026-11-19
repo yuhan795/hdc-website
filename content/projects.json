@@ -1,6 +1,150 @@
 {
   "items": [
     {
+      "slug": "118-w-76th-st",
+      "address": "UWS Townhouse",
+      "type": {
+        "en": "Townhouse Renovation",
+        "zh": "联排别墅翻新"
+      },
+      "location": {
+        "en": "Upper West Side, Manhattan",
+        "zh": "曼哈顿上西区"
+      },
+      "services": {
+        "en": "Interior",
+        "zh": "室内设计"
+      },
+      "credit": {
+        "en": "Yuhan Zhang, at SCDA Architects",
+        "zh": "Yuhan Zhang，SCDA Architects"
+      },
+      "lat": 40.7802,
+      "lng": -73.97786,
+      "images": [
+        {
+          "image": "assets/projects/118-w-76th-st/01.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Garden terrace",
+            "zh": "花园露台"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/02.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Formal living room",
+            "zh": "正式客厅"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/03.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Dining room",
+            "zh": "餐厅"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/04.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Family room and kitchen",
+            "zh": "家庭厅与厨房"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/05.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Lounge",
+            "zh": "休闲厅"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/06.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Main bedroom",
+            "zh": "主卧"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/07.jpg",
+          "kind": "render",
+          "caption": {
+            "en": "Wine cellar",
+            "zh": "酒窖"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/08.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Floor plans, cellar to penthouse",
+            "zh": "各层平面图（地下室至顶层）"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/09.jpg",
+          "kind": "board",
+          "caption": {
+            "en": "Dining room furniture and lighting",
+            "zh": "餐厅家具与灯具"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/10.jpg",
+          "kind": "board",
+          "caption": {
+            "en": "Formal living room furniture",
+            "zh": "正式客厅家具"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/11.jpg",
+          "kind": "board",
+          "caption": {
+            "en": "Furniture selection",
+            "zh": "家具选型"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/12.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Typical wall panel, plan detail",
+            "zh": "标准墙板平面节点"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/13.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Typical wall panel, section detail",
+            "zh": "标准墙板剖面节点"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/14.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Vertical cove lighting, plan detail",
+            "zh": "竖向灯槽平面节点"
+          }
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/15.jpg",
+          "kind": "drawing",
+          "caption": {
+            "en": "Typical bathroom ceiling detail",
+            "zh": "标准卫生间吊顶节点"
+          }
+        }
+      ]
+    },
+    {
       "slug": "jerkinhead-house",
       "address": "Jerkinhead House",
       "type": {

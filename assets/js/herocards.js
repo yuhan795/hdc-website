@@ -27,10 +27,10 @@
     '42-22-crescent-st',   // Dalongyi LIC
     '45-great-jones-st',   // Oncept Soho Store
     '211-w-84th-st',       // The Henry Residence
-    '6910-ny-28',          // Not-A-Cabin
+    '118-w-76th-st',       // UWS Townhouse (largest, nearest slot)
     '555-w-59th-st',       // The Elements Residence
     'jerkinhead-house',    // Jerkinhead House
-    'sharon-house',        // Sharon House
+    '6910-ny-28',          // Not-A-Cabin
   ];
 
   var layer = document.createElement('div');
