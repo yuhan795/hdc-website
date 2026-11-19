@@ -70,7 +70,7 @@
     var W = hr.width, H = hr.height;
     // Text to keep clear of, relative to the hero.
     var avoid = [];
-    hero.querySelectorAll('.heroeyebrow, .herostmt, .heroright, .herobottom .lbl').forEach(function (el) {
+    hero.querySelectorAll('.heroeyebrow, .herostmt, .heroright').forEach(function (el) {
       // Measure the text lines themselves, not the (full-width) boxes around them.
       var range = document.createRange();
       range.selectNodeContents(el);
