@@ -28,10 +28,13 @@ The owner writes in Chinese or English; reply in the language they used.
 | Path | What |
 |---|---|
 | `index.html` | All copy and structure. Bilingual: English inside `lang-en` spans, Chinese inside `lang-zh` spans; CSS hides the inactive language via `body[data-lang]`. |
-| `assets/css/style.css` | All styles. Colours are CSS variables on `body` (`--bg`, `--ink`, `--grey`, `--line`, `--panel`…) with a `body[data-theme="dark"]` override. |
+| `assets/css/style.css` | All styles. Colours are CSS variables on `body` (`--bg` warm off-white #F2F0EB, `--ink` charcoal, `--grey`, `--line`, `--panel`…) with a `body[data-theme="dark"]` override. Gallery styles are in the block at the end. |
 | `assets/js/site.js` | Nav border on scroll, language and theme toggles (saved in `localStorage` as `hdc-lang` / `hdc-theme`). |
 | `content/projects.json` | All project content, edited through the admin: `{ items: [{ slug, address (the project name, English), address_zh (optional Chinese name; the owner wants English names in both languages, so it is left empty), year, type/location/services {en, zh}, credit/award {en, zh} (optional), photos (photographer, optional), lat, lng, inset, images: [{ image, kind, caption {en, zh}, size (optional: "large" = big and in front, "small" = small and at the back; unset = sharper images come larger and nearer) }] }] }`. `kind` is render / drawing / board / site / construction / built / photo. `inset: true` → the “Beyond NYC” mini map (CT, Long Island, PA, upstate); no lat/lng → listed but not on the map. Order = order of the list. |
-| `project.html` + `assets/js/project.js` | One project page for all projects: `project.html?p=<slug>`. Images float as draggable cards at random places (like BAD STUDIO's Works board); clicking one opens a large view with ←/→. The page is exactly one screen (no scrolling): a low bar at the bottom left with only Location / Services / Team (the project name is visually hidden, kept for screen readers), cards sized (`CARD_FILL`) and placed only in the space above it. Cards have depth (smaller/softer when far, mouse parallax); the one under the pointer floats to the front. Each card has a white BAD-style frame with Project / Image / Year (parts joined with ·, no em-dashes). `?preview` shows a draft sent by the admin (postMessage, list order). |
+| `project.html` + `assets/js/project.js` | One project page for all projects: `project.html?p=<slug>`. Title + Location / Services / Team / Year / Status at the top, then one gallery wall with every image in the same frame: finished work first and larger (first finished image = entry point), drawings / boards / site photos mixed in after, about 80% size. No tilts. Hover shows a wall label (name, *caption*, year, kind, location). Click = viewer that keeps the frame, sized to leave room, with a bottom banner of project info; Esc / arrows; focus returns. Drag to rearrange (7px threshold) with "Reset arrangement". No Wall/Index switch (removed at the owner's request). Phones: vertical sequence. `?preview` shows a draft sent by the admin. |
+| `assets/js/gallery-core.js` | Shared gallery engine: layered DOM in CSS perspective (`.gv` viewport > `.gcam` camera > `.gwall` > `.gpos` position > `.gact` interaction > `.gprint` frame > `.gmat` mat > img). Every piece gets the same frame: dark moulding, white mat, and real thickness from four side faces (`.ge-*`, depth `--t` scales with the piece). Wall labels (`G.placard`), pointer parallax (fine pointers only, off for reduced motion), dragging, viewer, home to project flight, and `autoLayout()`. |
+| `content/gallery.json` | Explicit layouts. `home.hero` / `home.heroMobile` (hand-written: slug, image, x, y, w in units of 1000 = wall width, z depth px, wall main/side, `tablet:false` hides on tablets; finished images only, drawings are skipped), `home.selected` (the featured projects: Jerkinhead House, UWS Townhouse, Sharon House, each with 3 finished images, side left/right). `projects.<slug>` is written by `node tools/gallery-layout.mjs [slug|--all]` and can be tuned by hand; a project whose images no longer match its stored layout falls back to the same automatic layout. Run the tool after adding images. |
+| `assets/js/home.js` | Home hero wall and the three featured projects (finished work only; every picture links to its project). |
 | `assets/projects/<slug>/` | Images added before the admin existed. New uploads from the admin go to `assets/uploads/` (WebP, max 2000 px). |
 | `admin/` | Content admin (adapted from BAD STUDIO's): project list, then per project a live preview on the left and fields on the right. PUBLISH saves `content/projects.json` + uploads. |
 | `lib/auth.mjs`, `lib/save-rules.mjs` | Login (signed `hdc_session` cookie) and what the admin may save. Copied from BAD STUDIO. |
@@ -42,7 +45,7 @@ The owner writes in Chinese or English; reply in the language they used.
 
 ## Page sections (top to bottom)
 
-Nav · Hero · Studio (`#studio`, dark panel that unfolds from a card on scroll, two columns) · Practice (`#practice`, Space / Identity / Video / Interface) · Projects (`#projects`, map) · Footer (`#contact`).
+Nav · Hero (headline left, gallery wall right) · Selected work (`#work`: Jerkinhead House, UWS Townhouse, Sharon House) · Studio (`#studio`, dark panel that unfolds from a card on scroll, two columns) · Practice (`#practice`, Space / Identity / Video / Interface) · Projects (`#projects`, map) · Footer (`#contact`).
 
 ## Projects map
 
@@ -70,6 +73,8 @@ Current projects (Nov 2026), in list order (most images first; names were change
 - Code changes never edit `content/projects.json` or `assets/uploads/` without saying so — those belong to the admin.
 
 ## Decisions already made
+
+- Gallery redesign (2026-11-19): all images stay square to the wall (no tilts), same frame for every image, no Wall/Index switch, home page shows finished work only. The version live before it is tagged `classic-floating-cards` (commit e491eb3); go back with that tag if asked.
 
 - The site was originally a Claude Design export (one bundled `index.html`); it was unpacked into these plain files. Edit them directly — a new Claude Design export would overwrite everything.
 - Co-Founders section was removed and replaced by the projects map.

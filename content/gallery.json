@@ -1,0 +1,1213 @@
+{
+  "home": {
+    "hero": {
+      "w": 1000,
+      "h": 660,
+      "items": [
+        {
+          "slug": "118-w-76th-st",
+          "image": "assets/projects/118-w-76th-st/02.jpg",
+          "x": 330,
+          "y": 170,
+          "w": 440,
+          "z": 18,
+          "wall": "main",
+          "lead": true
+        },
+        {
+          "slug": "jerkinhead-house",
+          "image": "assets/projects/jerkinhead-house/01.jpg",
+          "x": 30,
+          "y": 46,
+          "w": 250,
+          "z": 0,
+          "wall": "side"
+        },
+        {
+          "slug": "sharon-house",
+          "image": "assets/projects/sharon-house/01.jpg",
+          "x": 60,
+          "y": 262,
+          "w": 210,
+          "z": 10,
+          "wall": "side"
+        },
+        {
+          "slug": "42-22-crescent-st",
+          "image": "assets/projects/42-22-crescent-st/01.jpg",
+          "x": 606,
+          "y": 18,
+          "w": 196,
+          "z": 0,
+          "wall": "main"
+        },
+        {
+          "slug": "45-great-jones-st",
+          "image": "assets/projects/45-great-jones-st/01.jpg",
+          "x": 834,
+          "y": 64,
+          "w": 146,
+          "z": 10,
+          "wall": "main"
+        },
+        {
+          "slug": "211-w-84th-st",
+          "image": "assets/projects/211-w-84th-st/01.jpg",
+          "x": 566,
+          "y": 470,
+          "w": 250,
+          "z": 0,
+          "wall": "main"
+        },
+        {
+          "slug": "555-w-59th-st",
+          "image": "assets/projects/555-w-59th-st/02.jpg",
+          "x": 372,
+          "y": 466,
+          "w": 124,
+          "z": 8,
+          "wall": "main"
+        },
+        {
+          "slug": "6910-ny-28",
+          "image": "assets/projects/6910-ny-28/02.jpg",
+          "x": 826,
+          "y": 330,
+          "w": 160,
+          "z": 6,
+          "wall": "main",
+          "tablet": false
+        }
+      ]
+    },
+    "heroMobile": {
+      "w": 1000,
+      "h": 1190,
+      "items": [
+        {
+          "slug": "118-w-76th-st",
+          "image": "assets/projects/118-w-76th-st/02.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 1000,
+          "lead": true
+        },
+        {
+          "slug": "jerkinhead-house",
+          "image": "assets/projects/jerkinhead-house/01.jpg",
+          "x": 30,
+          "y": 660,
+          "w": 470
+        },
+        {
+          "slug": "45-great-jones-st",
+          "image": "assets/projects/45-great-jones-st/01.jpg",
+          "x": 590,
+          "y": 700,
+          "w": 360
+        }
+      ]
+    },
+    "selected": [
+      {
+        "slug": "jerkinhead-house",
+        "side": "left",
+        "images": [
+          "assets/projects/jerkinhead-house/01.jpg",
+          "assets/projects/jerkinhead-house/05.jpg",
+          "assets/projects/jerkinhead-house/03.jpg"
+        ]
+      },
+      {
+        "slug": "118-w-76th-st",
+        "side": "right",
+        "images": [
+          "assets/projects/118-w-76th-st/04.jpg",
+          "assets/projects/118-w-76th-st/06.jpg",
+          "assets/projects/118-w-76th-st/07.jpg"
+        ]
+      },
+      {
+        "slug": "sharon-house",
+        "side": "left",
+        "images": [
+          "assets/projects/sharon-house/05.jpg",
+          "assets/projects/sharon-house/03.jpg",
+          "assets/projects/sharon-house/06.jpg"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "118-w-76th-st": {
+      "height": 995,
+      "items": [
+        {
+          "image": "assets/projects/118-w-76th-st/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 532.9,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.7762
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/02.jpg",
+          "x": 580.9,
+          "y": 0,
+          "w": 229.9,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7825
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/03.jpg",
+          "x": 705.7,
+          "y": 171,
+          "w": 229.9,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7825
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/04.jpg",
+          "x": 0,
+          "y": 372,
+          "w": 305.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7778
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/05.jpg",
+          "x": 347.3,
+          "y": 372,
+          "w": 305.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7778
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/06.jpg",
+          "x": 694.7,
+          "y": 372,
+          "w": 305.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7778
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/07.jpg",
+          "x": 0,
+          "y": 630.7,
+          "w": 207.1,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7825
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/08.jpg",
+          "x": 251.9,
+          "y": 631.1,
+          "w": 45.8,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.3347
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/09.jpg",
+          "x": 351.1,
+          "y": 654.5,
+          "w": 122.2,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.7825
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/10.jpg",
+          "x": 521.2,
+          "y": 609.7,
+          "w": 125.3,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.7825
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/11.jpg",
+          "x": 693.2,
+          "y": 609.7,
+          "w": 128.1,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.7825
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/12.jpg",
+          "x": 875.8,
+          "y": 700.9,
+          "w": 119.1,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.7805
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/13.jpg",
+          "x": 1.8,
+          "y": 836.3,
+          "w": 77,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.7835
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/14.jpg",
+          "x": 127.2,
+          "y": 841.7,
+          "w": 126,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.4847
+        },
+        {
+          "image": "assets/projects/118-w-76th-st/15.jpg",
+          "x": 321.9,
+          "y": 842.2,
+          "w": 127.5,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.5197
+        }
+      ]
+    },
+    "jerkinhead-house": {
+      "height": 797,
+      "items": [
+        {
+          "image": "assets/projects/jerkinhead-house/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 450.1,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.5004
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/02.jpg",
+          "x": 498.1,
+          "y": 0,
+          "w": 193.6,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5004
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/03.jpg",
+          "x": 620,
+          "y": 171,
+          "w": 172,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.3333
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/04.jpg",
+          "x": 1.4,
+          "y": 373.4,
+          "w": 119.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.7495
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/05.jpg",
+          "x": 164.2,
+          "y": 372.7,
+          "w": 169.7,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.051
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/06.jpg",
+          "x": 388.1,
+          "y": 386.2,
+          "w": 157.2,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.0628
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/07.jpg",
+          "x": 595.4,
+          "y": 376.5,
+          "w": 199.9,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.2674
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/08.jpg",
+          "x": 839,
+          "y": 373.7,
+          "w": 158.6,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.9992
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/09.jpg",
+          "x": 0.2,
+          "y": 601.3,
+          "w": 107.4,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.8
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/10.jpg",
+          "x": 151.9,
+          "y": 602.5,
+          "w": 89.4,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.6662
+        },
+        {
+          "image": "assets/projects/jerkinhead-house/11.jpg",
+          "x": 288,
+          "y": 634.2,
+          "w": 66,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.644
+        }
+      ]
+    },
+    "gray-house": {
+      "height": 760,
+      "items": [
+        {
+          "image": "assets/projects/gray-house/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 540,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 2.0812
+        },
+        {
+          "image": "assets/projects/gray-house/02.jpg",
+          "x": 588,
+          "y": 0,
+          "w": 163.1,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5004
+        },
+        {
+          "image": "assets/projects/gray-house/03.jpg",
+          "x": 761.1,
+          "y": 150.7,
+          "w": 163,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.4993
+        },
+        {
+          "image": "assets/projects/gray-house/04.jpg",
+          "x": 26.8,
+          "y": 358.2,
+          "w": 176.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.2048
+        },
+        {
+          "image": "assets/projects/gray-house/05.jpg",
+          "x": 250.9,
+          "y": 331.6,
+          "w": 259.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.4993
+        },
+        {
+          "image": "assets/projects/gray-house/06.jpg",
+          "x": 570.2,
+          "y": 353.9,
+          "w": 150.8,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1
+        },
+        {
+          "image": "assets/projects/gray-house/07.jpg",
+          "x": 796,
+          "y": 344.8,
+          "w": 176.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.2034
+        },
+        {
+          "image": "assets/projects/gray-house/08.jpg",
+          "x": 10.5,
+          "y": 570.7,
+          "w": 117.8,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.9662
+        },
+        {
+          "image": "assets/projects/gray-house/09.jpg",
+          "x": 184.8,
+          "y": 577.7,
+          "w": 122.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1
+        },
+        {
+          "image": "assets/projects/gray-house/10.jpg",
+          "x": 358.3,
+          "y": 570.7,
+          "w": 62.1,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.6665
+        }
+      ]
+    },
+    "45-great-jones-st": {
+      "height": 880,
+      "items": [
+        {
+          "image": "assets/projects/45-great-jones-st/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 324.7,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 0.8117
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/12.jpg",
+          "x": 372.7,
+          "y": 0,
+          "w": 134.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.75
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/02.jpg",
+          "x": 592.1,
+          "y": 221,
+          "w": 134.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.7503
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/03.jpg",
+          "x": 3.5,
+          "y": 481.2,
+          "w": 219.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.3379
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/04.jpg",
+          "x": 283.7,
+          "y": 485.9,
+          "w": 239,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/10.jpg",
+          "x": 581.4,
+          "y": 479.1,
+          "w": 89.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.5621
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/06.jpg",
+          "x": 719.5,
+          "y": 491.9,
+          "w": 224.1,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.6793
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/07.jpg",
+          "x": 0,
+          "y": 711.3,
+          "w": 191.3,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.7544
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/08.jpg",
+          "x": 239.7,
+          "y": 722,
+          "w": 147.5,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.6821
+        },
+        {
+          "image": "assets/projects/45-great-jones-st/09.jpg",
+          "x": 490,
+          "y": 721.9,
+          "w": 160.3,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.8248
+        }
+      ]
+    },
+    "42-22-crescent-st": {
+      "height": 769,
+      "items": [
+        {
+          "image": "assets/projects/42-22-crescent-st/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 450,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.5
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/02.jpg",
+          "x": 498,
+          "y": 0,
+          "w": 193.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/03.jpg",
+          "x": 639,
+          "y": 171,
+          "w": 133.2,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.0328
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/04.jpg",
+          "x": 7.4,
+          "y": 372,
+          "w": 223.9,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/05.jpg",
+          "x": 305.1,
+          "y": 393.9,
+          "w": 144.7,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.0086
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/06.jpg",
+          "x": 500.9,
+          "y": 380.8,
+          "w": 147.7,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/07.jpg",
+          "x": 725.8,
+          "y": 394.5,
+          "w": 253.9,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7778
+        },
+        {
+          "image": "assets/projects/42-22-crescent-st/08.jpg",
+          "x": 7.3,
+          "y": 606.8,
+          "w": 181.7,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.7769
+        }
+      ]
+    },
+    "sharon-house": {
+      "height": 753,
+      "items": [
+        {
+          "image": "assets/projects/sharon-house/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 450.1,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.5004
+        },
+        {
+          "image": "assets/projects/sharon-house/02.jpg",
+          "x": 498.1,
+          "y": 0,
+          "w": 193.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5
+        },
+        {
+          "image": "assets/projects/sharon-house/03.jpg",
+          "x": 664,
+          "y": 171,
+          "w": 193.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5
+        },
+        {
+          "image": "assets/projects/sharon-house/04.jpg",
+          "x": 5.3,
+          "y": 382.4,
+          "w": 202.8,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.4995
+        },
+        {
+          "image": "assets/projects/sharon-house/05.jpg",
+          "x": 274.7,
+          "y": 390.8,
+          "w": 190.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5
+        },
+        {
+          "image": "assets/projects/sharon-house/06.jpg",
+          "x": 521.9,
+          "y": 375,
+          "w": 214,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5005
+        },
+        {
+          "image": "assets/projects/sharon-house/07.jpg",
+          "x": 783.3,
+          "y": 374.7,
+          "w": 210.4,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5005
+        },
+        {
+          "image": "assets/projects/sharon-house/08.jpg",
+          "x": 2.2,
+          "y": 597.3,
+          "w": 61.8,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.647
+        }
+      ]
+    },
+    "6910-ny-28": {
+      "height": 541,
+      "items": [
+        {
+          "image": "assets/projects/6910-ny-28/02.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 540,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 2.1112
+        },
+        {
+          "image": "assets/projects/6910-ny-28/03.jpg",
+          "x": 588,
+          "y": 0,
+          "w": 207.6,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.9422
+        },
+        {
+          "image": "assets/projects/6910-ny-28/04.jpg",
+          "x": 759.3,
+          "y": 148.9,
+          "w": 142.5,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.3333
+        },
+        {
+          "image": "assets/projects/6910-ny-28/05.jpg",
+          "x": 0,
+          "y": 327.8,
+          "w": 139.4,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.909
+        },
+        {
+          "image": "assets/projects/6910-ny-28/06.jpg",
+          "x": 188,
+          "y": 396.5,
+          "w": 191.5,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 2.2624
+        },
+        {
+          "image": "assets/projects/6910-ny-28/07.jpg",
+          "x": 447.4,
+          "y": 361.1,
+          "w": 154.7,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.7857
+        },
+        {
+          "image": "assets/projects/6910-ny-28/08.jpg",
+          "x": 668.6,
+          "y": 360.6,
+          "w": 172,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.9627
+        },
+        {
+          "image": "assets/projects/6910-ny-28/09.jpg",
+          "x": 898.5,
+          "y": 361.5,
+          "w": 90,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.0467
+        }
+      ]
+    },
+    "211-w-84th-st": {
+      "height": 605,
+      "items": [
+        {
+          "image": "assets/projects/211-w-84th-st/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 533.6,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.7787
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/02.jpg",
+          "x": 581.6,
+          "y": 0,
+          "w": 229.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7778
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/03.jpg",
+          "x": 696.1,
+          "y": 171,
+          "w": 229.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7778
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/04.jpg",
+          "x": 1.6,
+          "y": 372,
+          "w": 254.9,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5013
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/05.jpg",
+          "x": 303.1,
+          "y": 376.3,
+          "w": 151.7,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.8977
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/06.jpg",
+          "x": 500.8,
+          "y": 378.2,
+          "w": 120.7,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.75
+        },
+        {
+          "image": "assets/projects/211-w-84th-st/07.jpg",
+          "x": 672.2,
+          "y": 389.6,
+          "w": 243.4,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.7619
+        }
+      ]
+    },
+    "art-storage-building": {
+      "height": 601,
+      "items": [
+        {
+          "image": "assets/projects/art-storage-building/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 396.3,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.3211
+        },
+        {
+          "image": "assets/projects/art-storage-building/02.jpg",
+          "x": 444.3,
+          "y": 0,
+          "w": 229.6,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7796
+        },
+        {
+          "image": "assets/projects/art-storage-building/04.jpg",
+          "x": 759.5,
+          "y": 171,
+          "w": 96.8,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.7507
+        },
+        {
+          "image": "assets/projects/art-storage-building/05.jpg",
+          "x": 3.6,
+          "y": 376.5,
+          "w": 92.4,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.5623
+        },
+        {
+          "image": "assets/projects/art-storage-building/03.jpg",
+          "x": 147.7,
+          "y": 372,
+          "w": 163.4,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.3333
+        },
+        {
+          "image": "assets/projects/art-storage-building/06.jpg",
+          "x": 370.9,
+          "y": 394,
+          "w": 131.9,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.0209
+        }
+      ]
+    },
+    "fifth-avenue-apartment": {
+      "height": 602,
+      "items": [
+        {
+          "image": "assets/projects/fifth-avenue-apartment/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 531.7,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.7722
+        },
+        {
+          "image": "assets/projects/fifth-avenue-apartment/02.jpg",
+          "x": 579.7,
+          "y": 0,
+          "w": 229.2,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.7766
+        },
+        {
+          "image": "assets/projects/fifth-avenue-apartment/03.jpg",
+          "x": 794.3,
+          "y": 171,
+          "w": 129,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1
+        },
+        {
+          "image": "assets/projects/fifth-avenue-apartment/04.jpg",
+          "x": 2.9,
+          "y": 375.7,
+          "w": 110.6,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.6667
+        },
+        {
+          "image": "assets/projects/fifth-avenue-apartment/05.jpg",
+          "x": 159.4,
+          "y": 372,
+          "w": 118.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.7498
+        },
+        {
+          "image": "assets/projects/fifth-avenue-apartment/06.jpg",
+          "x": 332.5,
+          "y": 372,
+          "w": 73,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.552
+        }
+      ]
+    },
+    "cpw-apartment": {
+      "height": 605,
+      "items": [
+        {
+          "image": "assets/projects/cpw-apartment/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 400,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.3333
+        },
+        {
+          "image": "assets/projects/cpw-apartment/02.jpg",
+          "x": 448,
+          "y": 0,
+          "w": 172,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.3333
+        },
+        {
+          "image": "assets/projects/cpw-apartment/03.jpg",
+          "x": 588.3,
+          "y": 171,
+          "w": 193.5,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.5
+        },
+        {
+          "image": "assets/projects/cpw-apartment/04.jpg",
+          "x": 6.6,
+          "y": 380,
+          "w": 220.3,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.3333
+        },
+        {
+          "image": "assets/projects/cpw-apartment/05.jpg",
+          "x": 282.5,
+          "y": 386.6,
+          "w": 192.1,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 1.3333
+        },
+        {
+          "image": "assets/projects/cpw-apartment/06.jpg",
+          "x": 548.7,
+          "y": 409,
+          "w": 166.9,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.2255
+        }
+      ]
+    },
+    "555-w-59th-st": {
+      "height": 570,
+      "items": [
+        {
+          "image": "assets/projects/555-w-59th-st/01.jpg",
+          "x": 0,
+          "y": 0,
+          "w": 317,
+          "r": 0,
+          "z": 18,
+          "wall": "main",
+          "ar": 1.0566
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/02.jpg",
+          "x": 365,
+          "y": 0,
+          "w": 93.4,
+          "r": 0,
+          "z": 10,
+          "wall": "main",
+          "ar": 0.7239
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/03.jpg",
+          "x": 602.8,
+          "y": 171,
+          "w": 213.8,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 1.6571
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/04.jpg",
+          "x": 0.9,
+          "y": 372.7,
+          "w": 102.9,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.7499
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/05.jpg",
+          "x": 149.6,
+          "y": 372,
+          "w": 94.2,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.7499
+        },
+        {
+          "image": "assets/projects/555-w-59th-st/07.jpg",
+          "x": 292.9,
+          "y": 372,
+          "w": 101.3,
+          "r": 0,
+          "z": 0,
+          "wall": "main",
+          "ar": 0.7499
+        }
+      ]
+    }
+  }
+}

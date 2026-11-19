@@ -17,15 +17,23 @@
 
 <nav class="nav pad" id="nav"><a href="index.html" class="navlogo">H<span class="lk1">D</span><span class="lk2">C</span><span class="lk3">.</span></a><div class="navlinks"><a href="index.html#studio" class="navlink"><span lang-en="">Studio</span><span lang-zh="">工作室</span></a><a href="index.html#practice" class="navlink"><span lang-en="">Practice</span><span lang-zh="">业务</span></a><a href="index.html#projects" class="navlink"><span lang-en="">Projects</span><span lang-zh="">项目</span></a><span class="tglsep"></span><button class="tgl" id="toggle-lang"><span lang-en="">中</span><span lang-zh="">EN</span></button><button class="tgl" id="toggle-theme" aria-label="Invert"><svg width="15" height="15" viewBox="0 0 20 20" style="display:block"><circle cx="10" cy="10" r="8.4" style="fill:none;stroke:currentColor;stroke-width:1.3"></circle><path d="M10 1.6 A8.4 8.4 0 0 1 10 18.4 Z" style="fill:currentColor"></path></svg></button><a href="index.html#contact" class="navcta"><span lang-en="">Contact</span><span lang-zh="">联系</span></a></div></nav>
 
-<main class="pboard" id="pboard" aria-label="Project images. Drag a card to move it, click it to enlarge it."></main>
-
-<aside class="pinfo pad" aria-label="Project information">
+<main class="ppage" id="main">
+<header class="phead pad">
+<div class="phead-l">
+<a class="pback" href="index.html#projects">← <span lang-en="">All projects</span><span lang-zh="">全部项目</span></a>
 <h1 class="ptitle" id="ptitle"></h1>
 <dl class="pmeta" id="pmeta"></dl>
-</aside>
-<nav class="pnext pad" aria-label="Back"><a class="pback" href="index.html#projects">← <span lang-en="">All projects</span><span lang-zh="">全部项目</span></a></nav>
+</div>
+<div class="pviews">
+<button type="button" class="preset" id="preset" hidden><span lang-en="">Reset arrangement</span><span lang-zh="">恢复原始排列</span></button>
+</div>
+</header>
+<div class="pwall pad" id="pwall" aria-label="Project images. Select a piece to look closer. Pieces can be dragged to rearrange them."></div>
+</main>
+<nav class="pfoot pad" aria-label="Back"><a class="pback" href="index.html#projects">← <span lang-en="">All projects</span><span lang-zh="">全部项目</span></a></nav>
 
 <script src="assets/js/site.js"></script>
+<script src="assets/js/gallery-core.js"></script>
 <script src="assets/js/project.js"></script>
 </body>
 </html>
