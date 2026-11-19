@@ -339,7 +339,7 @@ body[data-theme="dark"] .ptip-go{border-top-color:rgba(0,0,0,.14)}
 /* A second plane set back ~130px (scaled up so it reads at the same size), parallel to the first. */
 .gwall--side{transform:translateZ(-130px) scale(1.081)}
 .g-hidden .gwall{opacity:0;translate:0 28px -40px}
-.gpos{--t:clamp(7px,calc(var(--w) * var(--u,1px) * .035),20px);position:absolute;left:calc(var(--x) * var(--u,1px));top:calc(var(--y) * var(--u,1px));width:calc(var(--w) * var(--u,1px));transform-style:preserve-3d;transform:translate3d(var(--dx,0px),var(--dy,0px),var(--z,0px));transition:transform .6s var(--ease),translate .8s var(--ease) var(--delay,0ms),opacity .6s var(--ease) var(--delay,0ms)}
+.gpos{--t:clamp(5px,calc(var(--w) * var(--u,1px) * .025),12px);position:absolute;left:calc(var(--x) * var(--u,1px));top:calc(var(--y) * var(--u,1px));width:calc(var(--w) * var(--u,1px));transform-style:preserve-3d;transform:translate3d(var(--dx,0px),var(--dy,0px),var(--z,0px));transition:transform .6s var(--ease),translate .8s var(--ease) var(--delay,0ms),opacity .6s var(--ease) var(--delay,0ms)}
 .gpos.g-pre{opacity:0;translate:0 14px -24px;transition:none}
 .gpos.dragging{transition:none}
 .gact{position:relative;display:block;width:100%;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;text-decoration:none;cursor:pointer;transform-style:preserve-3d;transition:transform .22s var(--ease);-webkit-tap-highlight-color:transparent}
@@ -351,26 +351,25 @@ body[data-theme="dark"] .ptip-go{border-top-color:rgba(0,0,0,.14)}
 .dragging .gact{transform:translateZ(20px);cursor:grabbing}
 
 /* ---- The frame: one for every piece ----
-   A dark moulding with a bevel, a white mat set into it, the image cut into the mat. The frame
+   A thin dark frame, a white mat set into it, the image cut into the mat. The frame
    has real thickness: four side faces turned back towards the wall (.ge-*), which show as the
    piece sits off-centre or the camera turns. Top and left faces catch the light. */
-.gprint{position:relative;display:block;padding:clamp(4px,1.7%,12px);background:linear-gradient(135deg,#3B3833 0%,#27251F 40%,#1C1B18 100%);transform-style:preserve-3d;box-shadow:inset 1px 1px 0 rgba(255,255,255,.16),inset -1px -1px 0 rgba(0,0,0,.55),2px 4px 6px rgba(0,0,0,.1),6px 14px 28px rgba(0,0,0,.13);transition:box-shadow .22s var(--ease)}
-.gmat{position:relative;display:block;padding:clamp(5px,4%,24px);background:#FBFAF7;box-shadow:inset 1px 1px 3px rgba(0,0,0,.32),inset 0 0 0 1px rgba(0,0,0,.06)}
+.gprint{position:relative;display:block;padding:2px;background:#2C2A26;transform-style:preserve-3d;box-shadow:inset 1px 1px 0 rgba(255,255,255,.16),inset -1px -1px 0 rgba(0,0,0,.55),2px 4px 6px rgba(0,0,0,.1),6px 14px 28px rgba(0,0,0,.13);transition:box-shadow .22s var(--ease)}
+.gmat{position:relative;display:block;padding:clamp(5px,4%,24px);background:#FBFAF7;box-shadow:inset 1px 1px 2px rgba(0,0,0,.22)}
 .gmat img{display:block;width:100%;height:auto;pointer-events:none;user-select:none;-webkit-user-select:none;-webkit-user-drag:none;box-shadow:-1px -1px 0 rgba(0,0,0,.12),1px 1px 0 #fff}
 .ge{position:absolute;display:block;pointer-events:none}
 .ge-t{left:0;top:0;width:100%;height:var(--t);transform-origin:50% 0;transform:rotateX(-90deg);background:linear-gradient(to bottom,#7A746A,#4E4A43)}
-.ge-b{left:0;bottom:0;width:100%;height:var(--t);transform-origin:50% 100%;transform:rotateX(90deg);background:linear-gradient(to top,#2E2B27,#1A1917)}
+.ge-b{left:0;bottom:0;width:100%;height:var(--t);transform-origin:50% 100%;transform:rotateX(90deg);background:linear-gradient(to top,#57524A,#3A3732)}
 .ge-l{left:0;top:0;width:var(--t);height:100%;transform-origin:0 50%;transform:rotateY(90deg);background:linear-gradient(to right,#6A655C,#45413B)}
-.ge-r{right:0;top:0;width:var(--t);height:100%;transform-origin:100% 50%;transform:rotateY(-90deg);background:linear-gradient(to left,#34312C,#1E1D1A)}
+.ge-r{right:0;top:0;width:var(--t);height:100%;transform-origin:100% 50%;transform:rotateY(-90deg);background:linear-gradient(to left,#5E594F,#3E3A35)}
 @media (hover:hover){.gact:hover .gprint{box-shadow:inset 1px 1px 0 rgba(255,255,255,.16),inset -1px -1px 0 rgba(0,0,0,.55),4px 8px 10px rgba(0,0,0,.1),12px 26px 44px rgba(0,0,0,.16)}}
 body[data-theme="dark"] .gprint{box-shadow:inset 1px 1px 0 rgba(255,255,255,.14),inset -1px -1px 0 rgba(0,0,0,.55),2px 4px 6px rgba(0,0,0,.4),6px 14px 28px rgba(0,0,0,.5)}
 /* Where there is no perspective (phones, the viewer), the thickness is drawn as an edge. */
 .viewer .gprint{box-shadow:inset 1px 1px 0 rgba(255,255,255,.16),inset -1px -1px 0 rgba(0,0,0,.55),1px 1px 0 #161513,2px 2px 0 #161513,3px 3px 0 #121110,4px 4px 0 #121110,8px 14px 20px rgba(0,0,0,.18),16px 30px 60px rgba(0,0,0,.18)}
 .viewer .ge{display:none}
 
-/* ---- Wall label (like the card beside a painting), shown on hover / keyboard focus ---- */
-.glabel{position:absolute;left:0;top:calc(100% + 14px);z-index:5;display:flex;flex-direction:column;gap:3px;width:max-content;min-width:150px;max-width:250px;padding:12px 14px 13px;background:#F8F7F3;color:#1F1E1C;font-size:11px;line-height:1.35;text-align:left;box-shadow:0 1px 2px rgba(0,0,0,.07),2px 6px 14px rgba(0,0,0,.09);opacity:0;translate:0 -4px;pointer-events:none;transition:opacity .22s var(--ease),translate .22s var(--ease)}
-.glab-r .glabel{left:auto;right:0}
+/* ---- Wall label (like the card beside a painting), under the bottom-right corner, shown on hover / keyboard focus ---- */
+.glabel{position:absolute;right:0;top:calc(100% + 12px);z-index:5;display:flex;flex-direction:column;gap:3px;width:max-content;min-width:150px;max-width:250px;padding:12px 14px 13px;background:#F8F7F3;color:#1F1E1C;font-size:11px;line-height:1.35;text-align:left;box-shadow:0 1px 2px rgba(0,0,0,.07),2px 6px 14px rgba(0,0,0,.09);opacity:0;translate:0 -4px;pointer-events:none;transition:opacity .22s var(--ease),translate .22s var(--ease)}
 .glabel b{font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px}
 .glabel em{font-style:italic}
 .gact:focus-visible .glabel{opacity:1;translate:0 0}
@@ -385,7 +384,7 @@ body[data-theme="dark"] .gprint{box-shadow:inset 1px 1px 0 rgba(255,255,255,.14)
 .wk--right .wk-fig{order:2}
 .wk.g-hidden{opacity:0;translate:0 26px}
 .wk-fig{position:relative;perspective:1400px;--t:24px;z-index:2}
-.wk .gpos{--t:clamp(9px,calc(var(--pw) * .035),22px);left:0;top:0;width:var(--pw);transform:translate3d(var(--px),var(--py),var(--z,0px))}
+.wk .gpos{--t:clamp(6px,calc(var(--pw) * .025),14px);left:0;top:0;width:var(--pw);transform:translate3d(var(--px),var(--py),var(--z,0px))}
 .wk-2{--z:0px}
 .wk-0{--z:6px}
 .wk-1{--z:20px}

@@ -50,79 +50,68 @@
   }
 
   // ---------- automatic layout ----------
-  // images: [{ image, kind, size, ar }] in the project's list order. One wall: finished work
-  // first and larger (the first finished image is the entry point), drawings, boards and site
-  // photos after it and smaller, all on the same wall in the same frames, all kept square to the
-  // wall. Returns { height, items: [{ image, x, y, w, r, z, wall }] }.
+  // images: [{ image, kind, size, ar }] in the project's list order. One wall, freely composed
+  // rather than in rows: finished work first and larger (the first finished image is the entry
+  // point at the top left), drawings, boards and site photos after it and smaller. Each piece is
+  // tried at many places across the width and hangs at the highest one where it keeps a clear
+  // gap to its neighbours, so the wall fills downwards like a salon hang, never in rows.
+  // All pieces stay square to the wall. Returns { height, items: [{ image, x, y, w, r, z, wall }] }.
   G.autoLayout = function (seed, images) {
-    var R = rng(seed || 'hdc'), W = 1000, GAP = 30, items = [];
+    var R = rng(seed || 'hdc'), W = 1000, GX = 40, GY = 56, items = [], boxes = [];
     var fin = images.filter(function (im) { return FINISHED[im.kind]; });
     var proc = images.filter(function (im) { return !FINISHED[im.kind]; });
     if (!fin.length) { fin = proc; proc = []; }
     function round(v) { return Math.round(v * 10) / 10; }
     function add(im, x, y, w, z) {
       items.push({ image: im.image, x: round(x), y: round(y), w: round(w), r: 0, z: z || 0, wall: 'main' });
-      return y + w / im.ar;
+      boxes.push({ x0: x, x1: x + w, y0: y, y1: y + w / im.ar });
     }
-    // Process pieces hang at about 80% of the size of finished ones.
-    function weight(im) {
-      var base = FINISHED[im.kind] && fin !== proc ? 1 : 0.8;
-      if (im.size === 'large') base = Math.max(base, 1);
-      if (im.size === 'small') base *= 0.8;
-      return base;
+    // Size by area, so tall and wide pieces of one kind read as equals.
+    function widthOf(im, finished) {
+      var area = finished ? 30000 + R() * 34000 : 15000 + R() * 15000;
+      if (im.size === 'large') area *= 1.45;
+      if (im.size === 'small') area *= 0.7;
+      var w = Math.sqrt(area * im.ar);
+      if (im.ar < 0.55) w = Math.max(w, 110);
+      return Math.min(w, W * 0.5);
     }
-    // Rows of pictures at roughly one height (cycling through a few heights), each picture a
-    // little smaller than its slot and hung to the top, middle or bottom of the row: a salon hang
-    // over a clear grid.
-    function shelf(queue, y, heights) {
-      var bottom = y, row = [], rowNo = 0, gap = GAP * 1.4;
-      function hOf(im) { return heights[rowNo % heights.length] * weight(im) * (im.ar < 0.55 ? 1.7 : 1); }
-      function flush() {
-        if (!row.length) return;
-        var natural = row.reduce(function (s, im) { return s + hOf(im) * im.ar; }, 0);
-        var s = clamp((W - gap * (row.length - 1)) / natural, 0.6, 1.05);
-        var x = 0;
-        var rowH = Math.max.apply(null, row.map(function (im) { return hOf(im) * s; }));
-        row.forEach(function (im) {
-          var slotW = hOf(im) * im.ar * s;
-          var f = im.size === 'large' ? 1 : 0.8 + R() * 0.2;
-          var w = slotW * f, h = w / im.ar;
-          var align = R(), dy = align < 0.33 ? 0 : align < 0.66 ? (rowH - h) / 2 : rowH - h;
-          var z = FINISHED[im.kind] ? 10 : 0;
-          bottom = Math.max(bottom, add(im, x + (slotW - w) * R(), y + dy, w, z));
-          x += slotW + gap;
-        });
-        y = bottom + GAP * 2.2;
-        row = []; rowNo++;
+    // The lowest top edge at which a piece of width w at x clears everything above it.
+    function settle(x, w, h, from) {
+      var y = from || 0;
+      for (var pass = 0; pass < boxes.length + 1; pass++) {
+        var hit = null;
+        for (var i = 0; i < boxes.length; i++) {
+          var b = boxes[i];
+          if (x < b.x1 + GX && x + w > b.x0 - GX && y < b.y1 + GY && y + h > b.y0 - GY) { hit = b; break; }
+        }
+        if (!hit) return y;
+        y = hit.y1 + GY;
       }
-      queue.forEach(function (im) {
-        var widthSoFar = row.reduce(function (s, q) { return s + hOf(q) * q.ar + gap; }, 0);
-        if (row.length && widthSoFar + hOf(im) * im.ar > W * 1.12) flush();
-        row.push(im);
-      });
-      flush();
-      return bottom;
+      return y;
     }
 
     // Entry point: the first finished image, large, at the top left and slightly proud.
     var a = fin[0];
-    var aH = a.ar < 1 ? 400 : 300, aW = Math.min(540, aH * a.ar), aHt = aW / a.ar;
-    var bottom = add(a, 0, 0, aW, 18);
-    var rest = fin.slice(1).concat(proc);
-    var bx = aW + GAP * 1.6, bw = W - bx;
-    // Beside it: two pieces, one hung to its top edge, one to its bottom edge.
-    if (rest.length && bw > 220) {
-      var two = rest.length > 1 ? 2 : 1;
-      var h2 = two === 2 ? (aHt - GAP * 1.4) / 2 : aHt * 0.66;
-      for (var b = 0; b < two; b++) {
-        var im = rest.shift();
-        var w = Math.min(bw, h2 * im.ar), h = w / im.ar;
-        var x = bx + (b ? (bw - w) * (0.35 + R() * 0.4) : 0);
-        var y = b || two === 1 ? aHt - h : 0;
-        bottom = Math.max(bottom, add(im, x, y, w, FINISHED[im.kind] ? 10 : 0));
+    var aW = a.ar < 1 ? 400 * a.ar : Math.min(500, 290 * a.ar);
+    add(a, 0, 0, aW, 18);
+    // Each piece hangs no higher than a little above the one before it, so the list order (finished
+    // work first) still reads from top to bottom.
+    var lastY = 0;
+    fin.slice(1).concat(proc).forEach(function (im) {
+      var finished = FINISHED[im.kind] && fin !== proc;
+      var w = widthOf(im, finished), h = w / im.ar;
+      var best = null;
+      for (var k = 0; k < 48; k++) {
+        var x = R() * (W - w);
+        var y = settle(x, w, h, Math.max(0, lastY - 260)) + R() * 30;
+        // Prefer the highest spot; a little randomness keeps the edges uneven.
+        var score = y + R() * 40;
+        if (!best || score < best.score) best = { x: x, y: y, score: score };
       }
-    }
-    if (rest.length) bottom = shelf(rest, bottom + GAP * 2.4, [165, 130, 150]);
+      add(im, best.x, best.y, w, finished ? 10 : 0);
+      lastY = best.y;
+    });
+    var bottom = boxes.reduce(function (m, b) { return Math.max(m, b.y1); }, 0);
     return { height: Math.round(bottom + 60), items: items };
   };
 
@@ -170,8 +159,6 @@
     var pos = document.createElement('div');
     pos.className = 'gpos';
     setPlace(pos, place);
-    // Pieces near the right edge open their label towards the left.
-    if (place.x + place.w > 700) pos.classList.add('glab-r');
     var act = document.createElement(opts.href ? 'a' : 'button');
     act.className = 'gact';
     if (opts.href) act.href = opts.href; else act.type = 'button';
@@ -409,9 +396,9 @@
     });
     addEventListener('resize', function () { if (V.open) fit(V.list[V.i]); });
   }
-  // Frame sizes as on the wall: moulding ~1.7% of the frame width, mat ~4% of the inside width.
+  // Frame sizes as on the wall: a 2px frame, mat ~4% of the inside width.
   function frameParts(W) {
-    var m = clamp(W * 0.017, 4, 12), p = clamp((W - 2 * m) * 0.04, 5, 24);
+    var m = 2, p = clamp((W - 2 * m) * 0.04, 5, 24);
     return { m: m, p: p };
   }
   // The framed print fits between the nav and the banner, with generous space at the sides.

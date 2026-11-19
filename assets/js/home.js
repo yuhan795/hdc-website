@@ -155,7 +155,6 @@
       s.setProperty('--px', x.toFixed(1) + 'px');
       s.setProperty('--py', y.toFixed(1) + 'px');
       s.setProperty('--pw', w.toFixed(1) + 'px');
-      it.pos.classList.toggle('glab-r', x + w > fw * 0.75);
       H = Math.max(H, y + w / it.entry.ar);
     }
     var p0 = k.pieces[0], p1 = k.pieces[1], p2 = k.pieces[2];
