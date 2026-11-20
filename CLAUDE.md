@@ -37,6 +37,7 @@ The owner writes in Chinese or English; reply in the language they used.
 | `lib/auth.mjs`, `lib/save-rules.mjs` | Login (signed `hdc_session` cookie) and what the admin may save. Copied from BAD STUDIO. |
 | `tools/dev-server.mjs` | Local server with the admin API; saves to disk. Credentials in `.dev.vars` (gitignored, never commit). |
 | `functions/api/*.js`, `lib/github.mjs`, `_routes.json`, `_headers` | The online admin's Cloudflare Pages functions, plus routing and cache rules. |
+| `functions/_middleware.js` | Makes repo files that are not part of the site (CLAUDE.md, README.md, package.json, CNAME, .gitignore, tools/, lib/) answer 404 online. The paths are listed in `_routes.json`; add new internal files there too. Only runs on Cloudflare, not in the local dev server. |
 | `assets/js/map.js` | Projects map. |
 | `assets/fonts/` | Neue Montreal (body) and Space Grotesk (HDC. logo). |
 
